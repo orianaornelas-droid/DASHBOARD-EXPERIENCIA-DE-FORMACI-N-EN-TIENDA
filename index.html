@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -19,86 +20,86 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
 *,::-webkit-scrollbar{scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 ::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
 
-.topbar{background:var(--navy);padding:0 28px;display:flex;align-items:center;gap:16px;height:60px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.topbar{background:var(–navy);padding:0 28px;display:flex;align-items:center;gap:16px;height:60px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.25)}
 .topbar-logo{color:#fff;font-size:17px;font-weight:800;letter-spacing:.04em;display:flex;align-items:center;gap:10px}
-.logo-pill{background:var(--cyan);color:#fff;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.1em}
+.logo-pill{background:var(–cyan);color:#fff;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.1em}
 .topbar-sep{width:1px;height:30px;background:rgba(255,255,255,.15)}
 .topbar-title{color:rgba(255,255,255,.85);font-size:12px;font-weight:500;flex:1}
 .topbar-meta{color:rgba(255,255,255,.5);font-size:10px;font-weight:500}
 
-.nav{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding:0 28px;display:flex;overflow-x:auto}
+.nav{background:var(–navy);border-top:1px solid rgba(255,255,255,.08);padding:0 28px;display:flex;overflow-x:auto}
 .nav::-webkit-scrollbar{height:0}
 .nav-tab{padding:12px 16px;font-size:10px;font-weight:700;color:rgba(255,255,255,.45);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;letter-spacing:.07em;transition:all .15s;text-transform:uppercase}
-.nav-tab:hover{color:rgba(255,255,255,.85)}.nav-tab.active{color:#fff;border-bottom-color:var(--cyan)}
+.nav-tab:hover{color:rgba(255,255,255,.85)}.nav-tab.active{color:#fff;border-bottom-color:var(–cyan)}
 
 .page{display:none;padding:24px 28px 80px;max-width:1380px;margin:0 auto}.page.active{display:block}
 
 .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:20px}
-.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow);border-top:3px solid var(--cyan)}
-.kpi.k-navy{border-top-color:var(--navy)}.kpi.k-green{border-top-color:var(--mueble)}.kpi.k-orange{border-top-color:var(--bot)}
-.kpi-lbl{font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.kpi-val{font-size:30px;font-weight:800;line-height:1;color:var(--navy)}
-.kpi-sub{font-size:9.5px;color:var(--muted);margin-top:5px;line-height:1.4}
+.kpi{background:var(–surface);border:1px solid var(–border);border-radius:10px;padding:16px 18px;box-shadow:var(–shadow);border-top:3px solid var(–cyan)}
+.kpi.k-navy{border-top-color:var(–navy)}.kpi.k-green{border-top-color:var(–mueble)}.kpi.k-orange{border-top-color:var(–bot)}
+.kpi-lbl{font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(–muted);margin-bottom:7px}
+.kpi-val{font-size:30px;font-weight:800;line-height:1;color:var(–navy)}
+.kpi-sub{font-size:9.5px;color:var(–muted);margin-top:5px;line-height:1.4}
 
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:18px}
 .g21{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:18px}
 @media(max-width:860px){.g2,.g3,.g21{grid-template-columns:1fr}}
 
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:18px}
+.card{background:var(–surface);border:1px solid var(–border);border-radius:10px;padding:20px 22px;box-shadow:var(–shadow);margin-bottom:18px}
 .card-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:10px}
-.card-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--navy)}
-.card-sub{font-size:9px;color:var(--muted);margin-top:3px;line-height:1.4}
+.card-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(–navy)}
+.card-sub{font-size:9px;color:var(–muted);margin-top:3px;line-height:1.4}
 
-.ibtn{width:20px;height:20px;border-radius:50%;background:var(--cyan-light);border:1px solid var(--cyan);color:var(--cyan);font-size:10px;font-weight:700;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative}
+.ibtn{width:20px;height:20px;border-radius:50%;background:var(–cyan-light);border:1px solid var(–cyan);color:var(–cyan);font-size:10px;font-weight:700;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative}
 .ibtn:hover .tt{display:block}
-.tt{display:none;position:absolute;top:26px;right:0;background:var(--navy);color:#fff;font-size:10px;font-weight:400;line-height:1.5;padding:9px 12px;border-radius:8px;width:270px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,.2)}
-.tt::before{content:'';position:absolute;top:-5px;right:7px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(--navy)}
+.tt{display:none;position:absolute;top:26px;right:0;background:var(–navy);color:#fff;font-size:10px;font-weight:400;line-height:1.5;padding:9px 12px;border-radius:8px;width:270px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.tt::before{content:’’;position:absolute;top:-5px;right:7px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid var(–navy)}
 
-.sec-lbl{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);margin:22px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--cyan-light)}
+.sec-lbl{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(–cyan);margin:22px 0 12px;padding-bottom:7px;border-bottom:2px solid var(–cyan-light)}
 
 /* HBAR with count+pct */
 .hbar-list{display:flex;flex-direction:column;gap:9px}
-.hbar-item .hbar-label{font-size:11px;color:var(--text);margin-bottom:3px;font-weight:500}
+.hbar-item .hbar-label{font-size:11px;color:var(–text);margin-bottom:3px;font-weight:500}
 .hbar-track{display:flex;align-items:center;gap:8px}
-.hbar-outer{flex:1;height:10px;background:var(--bg);border-radius:99px;overflow:hidden}
+.hbar-outer{flex:1;height:10px;background:var(–bg);border-radius:99px;overflow:hidden}
 .hbar-fill{height:100%;border-radius:99px;transition:width .5s ease}
-.hbar-val{font-size:10px;font-weight:700;color:var(--muted);min-width:72px;text-align:right;white-space:nowrap}
+.hbar-val{font-size:10px;font-weight:700;color:var(–muted);min-width:72px;text-align:right;white-space:nowrap}
 
 /* DONUT */
 .donut-wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .donut-legend{display:flex;flex-direction:column;gap:8px;flex:1;min-width:120px}
 .dl-item{display:flex;align-items:center;gap:7px;font-size:11px}
 .dl-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
-.dl-pct{font-weight:800;margin-left:auto;color:var(--navy);font-size:11px}
-.dl-n{font-size:9px;color:var(--muted);margin-left:4px}
+.dl-pct{font-weight:800;margin-left:auto;color:var(–navy);font-size:11px}
+.dl-n{font-size:9px;color:var(–muted);margin-left:4px}
 
 /* FAV stacked */
 .fav-block{display:flex;flex-direction:column;gap:12px}
-.fav-row-lbl{font-size:11px;font-weight:700;color:var(--text);margin-bottom:6px}
+.fav-row-lbl{font-size:11px;font-weight:700;color:var(–text);margin-bottom:6px}
 .fav-stack{display:flex;height:24px;border-radius:5px;overflow:hidden;margin-bottom:4px}
 .fav-seg{display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;color:#fff;transition:width .4s}
 .fav-leg{display:flex;gap:10px;flex-wrap:wrap;margin-top:3px}
-.fav-leg-item{display:flex;align-items:center;gap:4px;font-size:9.5px;color:var(--muted)}
+.fav-leg-item{display:flex;align-items:center;gap:4px;font-size:9.5px;color:var(–muted)}
 .fav-leg-dot{width:8px;height:8px;border-radius:2px}
 /* Expand detail */
-.fav-expand-btn{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(--cyan);cursor:pointer;margin-top:5px;border:none;background:none;padding:0}
+.fav-expand-btn{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(–cyan);cursor:pointer;margin-top:5px;border:none;background:none;padding:0}
 .fav-detail{display:none;margin-top:8px}
 .fav-detail.open{display:block}
 
 /* RATE bars 3 groups */
 .rate-grid3{display:flex;flex-direction:column;gap:16px}
-.rate-attr{font-size:11px;font-weight:700;color:var(--text);margin-bottom:5px}
+.rate-attr{font-size:11px;font-weight:700;color:var(–text);margin-bottom:5px}
 .rate-line{display:grid;grid-template-columns:105px 1fr 80px;align-items:center;gap:7px;margin-bottom:3px}
 .rate-lbl{font-size:9.5px;font-weight:700}
-.rate-outer{height:8px;background:var(--bg);border-radius:99px;overflow:hidden}
+.rate-outer{height:8px;background:var(–bg);border-radius:99px;overflow:hidden}
 .rate-inner{height:100%;border-radius:99px}
-.rate-score{font-size:10px;font-weight:700;color:var(--navy);text-align:right}
+.rate-score{font-size:10px;font-weight:700;color:var(–navy);text-align:right}
 
 /* NPS */
 .nps-wrap{display:flex;flex-direction:column;gap:5px;margin-top:6px}
 .nps-bar-row{display:grid;grid-template-columns:20px 1fr 54px;gap:7px;align-items:center}
-.nps-outer{height:9px;background:var(--bg);border-radius:99px;overflow:hidden}
+.nps-outer{height:9px;background:var(–bg);border-radius:99px;overflow:hidden}
 .nps-inner{height:100%;border-radius:99px}
 
 /* GROUPED BAR SVG */
@@ -107,68 +108,69 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
 /* SURVEY MAP */
 .survey-map{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:0}
 @media(max-width:800px){.survey-map{grid-template-columns:1fr 1fr}}
-.smod{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;box-shadow:var(--shadow);cursor:pointer;transition:all .18s;border-top:3px solid var(--cyan)}
-.smod:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.smod{background:var(–surface);border:1px solid var(–border);border-radius:10px;padding:14px 12px;text-align:center;box-shadow:var(–shadow);cursor:pointer;transition:all .18s;border-top:3px solid var(–cyan)}
+.smod:hover{transform:translateY(-2px);box-shadow:var(–shadow-lg)}
 .smod .mi{font-size:26px;margin-bottom:6px}
-.smod .mt{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--navy);margin-bottom:3px}
-.smod .ms{font-size:9px;color:var(--muted);line-height:1.4}
+.smod .mt{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(–navy);margin-bottom:3px}
+.smod .ms{font-size:9px;color:var(–muted);line-height:1.4}
 
 /* STORES TABLE */
 .stores-tbl{width:100%;border-collapse:collapse}
-.stores-tbl th{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:6px 10px;border-bottom:2px solid var(--border);text-align:left}
-.stores-tbl td{font-size:11px;padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+.stores-tbl th{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(–muted);padding:6px 10px;border-bottom:2px solid var(–border);text-align:left}
+.stores-tbl td{font-size:11px;padding:7px 10px;border-bottom:1px solid var(–border);vertical-align:middle}
 .stores-tbl tr:last-child td{border-bottom:none}
-.stores-tbl .mb-outer{height:5px;background:var(--bg);border-radius:99px;overflow:hidden;min-width:60px}
+.stores-tbl .mb-outer{height:5px;background:var(–bg);border-radius:99px;overflow:hidden;min-width:60px}
 .stores-tbl .mb-inner{height:100%;border-radius:99px}
 .badge{display:inline-block;font-size:8.5px;font-weight:700;padding:2px 6px;border-radius:99px}
 .btop{background:#e3f2fd;color:#0277bd}.bbot{background:#fff3e0;color:#e65100}.bmueble{background:#e8f5e9;color:#1b5e20}
 
 /* FILTER */
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.filter-btn{font-size:9.5px;font-weight:700;padding:5px 11px;border-radius:99px;border:1px solid var(--border);cursor:pointer;transition:all .15s;background:var(--bg);color:var(--text);white-space:nowrap}
-.filter-btn.active-f{background:var(--navy);color:#fff;border-color:var(--navy)}
+.filter-btn{font-size:9.5px;font-weight:700;padding:5px 11px;border-radius:99px;border:1px solid var(–border);cursor:pointer;transition:all .15s;background:var(–bg);color:var(–text);white-space:nowrap}
+.filter-btn.active-f{background:var(–navy);color:#fff;border-color:var(–navy)}
 
 /* OBSTACLES */
 .obst-list{display:flex;flex-direction:column;gap:9px}
-.obst-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border-radius:9px;border-left:3px solid var(--border)}
-.obst-badge{background:var(--navy);color:#fff;font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;white-space:nowrap;min-width:50px;text-align:center;flex-shrink:0}
+.obst-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(–bg);border-radius:9px;border-left:3px solid var(–border)}
+.obst-badge{background:var(–navy);color:#fff;font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;white-space:nowrap;min-width:50px;text-align:center;flex-shrink:0}
 .obst-title{font-size:11px;font-weight:700;flex:1}
-.obst-pct{font-size:10px;font-weight:700;color:var(--muted);flex-shrink:0}
-.obst-bar{width:80px;height:6px;background:var(--border);border-radius:99px;overflow:hidden;flex-shrink:0}
+.obst-pct{font-size:10px;font-weight:700;color:var(–muted);flex-shrink:0}
+.obst-bar{width:80px;height:6px;background:var(–border);border-radius:99px;overflow:hidden;flex-shrink:0}
 .obst-bar-fill{height:100%;border-radius:99px}
 
 /* COMMENTS */
 .comment-area{max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:7px}
-.cpill{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:10.5px;color:var(--text);line-height:1.6;font-style:italic;position:relative;padding-left:18px}
-.cpill::before{content:'"';position:absolute;left:7px;top:7px;color:var(--cyan);font-size:15px;font-weight:800;font-style:normal}
+.cpill{background:var(–bg);border:1px solid var(–border);border-radius:8px;padding:9px 13px;font-size:10.5px;color:var(–text);line-height:1.6;font-style:italic;position:relative;padding-left:18px}
+.cpill::before{content:’”’;position:absolute;left:7px;top:7px;color:var(–cyan);font-size:15px;font-weight:800;font-style:normal}
 
 /* ANALYSIS */
 .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
 @media(max-width:860px){.analysis-grid{grid-template-columns:1fr}}
-.finding{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow);border-left:3px solid var(--cyan)}
-.finding.warn{border-left-color:var(--bot)}.finding.alert{border-left-color:#c62828}.finding.positive{border-left-color:var(--mueble)}
-.ftitle{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:flex-start;gap:7px;line-height:1.4}
-.fbody{font-size:11px;color:var(--text);line-height:1.7}.fbody strong{color:var(--navy)}
+.finding{background:var(–surface);border:1px solid var(–border);border-radius:10px;padding:16px 18px;box-shadow:var(–shadow);border-left:3px solid var(–cyan)}
+.finding.warn{border-left-color:var(–bot)}.finding.alert{border-left-color:#c62828}.finding.positive{border-left-color:var(–mueble)}
+.ftitle{font-size:11px;font-weight:700;color:var(–navy);margin-bottom:8px;display:flex;align-items:flex-start;gap:7px;line-height:1.4}
+.fbody{font-size:11px;color:var(–text);line-height:1.7}.fbody strong{color:var(–navy)}
 .ftag{font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:99px;white-space:nowrap;flex-shrink:0}
-.ft-i{background:var(--cyan-light);color:var(--cyan)}.ft-w{background:#fff3e0;color:#e65100}
+.ft-i{background:var(–cyan-light);color:var(–cyan)}.ft-w{background:#fff3e0;color:#e65100}
 .ft-a{background:#ffebee;color:#c62828}.ft-ok{background:#e8f5e9;color:#2e7d32}
-.rec{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;margin-bottom:11px;display:flex;gap:12px;align-items:flex-start}
-.rec-num{background:var(--cyan);color:#fff;width:22px;height:22px;border-radius:50%;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rec{background:var(–navy);color:#fff;border-radius:10px;padding:14px 18px;margin-bottom:11px;display:flex;gap:12px;align-items:flex-start}
+.rec-num{background:var(–cyan);color:#fff;width:22px;height:22px;border-radius:50%;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .rec-title{font-size:11px;font-weight:700;margin-bottom:4px}.rec-body{font-size:10px;opacity:.8;line-height:1.6}
 
 /* BANNER */
-.banner{background:var(--navy);color:#fff;border-radius:12px;padding:18px 24px;display:flex;align-items:center;gap:18px;margin-bottom:18px;box-shadow:var(--shadow-lg)}
+.banner{background:var(–navy);color:#fff;border-radius:12px;padding:18px 24px;display:flex;align-items:center;gap:18px;margin-bottom:18px;box-shadow:var(–shadow-lg)}
 .banner-icon{font-size:32px;flex-shrink:0}.banner-text{flex:1}
 .banner-title{font-size:13px;font-weight:700;margin-bottom:3px}.banner-sub{font-size:11px;opacity:.75;line-height:1.5}
-.banner-kpi{text-align:center}.banner-num{font-size:42px;font-weight:800;color:var(--cyan);line-height:1}
+.banner-kpi{text-align:center}.banner-num{font-size:42px;font-weight:800;color:var(–cyan);line-height:1}
 .banner-klabel{font-size:10px;opacity:.6;margin-top:2px}
 
 /* GROUP LEGEND */
-.gl{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px;padding:11px 14px;background:var(--surface);border:1px solid var(--border);border-radius:9px}
+.gl{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px;padding:11px 14px;background:var(–surface);border:1px solid var(–border);border-radius:9px}
 .gl-item{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600}
 .gl-dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
-.gl-n{font-size:9.5px;font-weight:400;color:var(--muted)}
+.gl-n{font-size:9.5px;font-weight:400;color:var(–muted)}
 </style>
+
 </head>
 <body>
 <div class="topbar">
@@ -183,11 +185,12 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
   <div class="nav-tab" onclick="showPage('espacio',this)">Espacio de Formación</div>
   <div class="nav-tab" onclick="showPage('cultura',this)">Cultura &amp; Liderazgo</div>
   <div class="nav-tab" onclick="showPage('motivacion',this)">Motivadores &amp; Obstáculos</div>
-  <div class="nav-tab" onclick="showPage('comparativo',this)">Comparativo por Grupo</div>
+  <div class="nav-tab" onclick="showPage('comparativo',this)">RR.HH. Operaciones</div>
   <div class="nav-tab" onclick="showPage('analisis',this)">Análisis &amp; Hallazgos</div>
 </div>
 
 <!-- ══ RESUMEN ══ -->
+
 <div class="page active" id="page-resumen">
   <div class="kpi-row" style="margin-top:20px">
     <div class="kpi"><div class="kpi-lbl">Total respuestas</div><div class="kpi-val">527</div><div class="kpi-sub">79.0% de la población (667)</div></div>
@@ -200,7 +203,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
 
   <div class="g2">
     <div class="card" style="margin-bottom:0">
-      <div class="card-hdr"><div><div class="card-title">Distribución por Cargo</div><div class="card-sub">510 respondentes</div></div><div class="ibtn">i<div class="tt">¿A qué cargo perteneces? Permite segmentar por nivel jerárquico.</div></div></div>
+      <div class="card-hdr"><div><div class="card-title">Distribución por Cargo</div><div class="card-sub">527 respondentes</div></div><div class="ibtn">i<div class="tt">¿A qué cargo perteneces? Permite segmentar por nivel jerárquico.</div></div></div>
       <div id="ch-cargo-donut" style="display:flex;justify-content:center"></div>
     </div>
     <div class="card" style="margin-bottom:0">
@@ -233,6 +236,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
 </div>
 
 <!-- ══ USO & ACCESO ══ -->
+
 <div class="page" id="page-uso">
   <div class="g2" style="margin-top:20px">
     <div class="card">
@@ -256,7 +260,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
   </div>
   <div class="g2">
     <div class="card">
-      <div class="card-hdr"><div><div class="card-title">Lugar Donde Realizan los Cursos</div><div class="card-sub">Selección múltiple · n y % sobre total (510 resp.) · incluye respuestas adicionales</div></div><div class="ibtn">i<div class="tt">¿En qué lugar sueles realizar los cursos? (Selecciona los que apliquen). Se muestran las categorías principales y respuestas libres agrupadas.</div></div></div>
+      <div class="card-hdr"><div><div class="card-title">Lugar Donde Realizan los Cursos</div><div class="card-sub">Selección múltiple · n y % sobre total (527 resp.) · incluye respuestas adicionales</div></div><div class="ibtn">i<div class="tt">¿En qué lugar sueles realizar los cursos? (Selecciona los que apliquen). Se muestran las categorías principales y respuestas libres agrupadas.</div></div></div>
       <div id="ch-lugar"></div>
     </div>
     <div class="card">
@@ -267,6 +271,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
 </div>
 
 <!-- ══ ESPACIO DE FORMACIÓN ══ -->
+
 <div class="page" id="page-espacio">
   <div class="banner" style="margin-top:20px">
     <span class="banner-icon">🪑</span>
@@ -320,13 +325,14 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
       <div id="ch-nps"></div>
     </div>
     <div class="card">
-      <div class="card-hdr"><div><div class="card-title">¿Un espacio dedicado mejoraría el desempeño?</div><div class="card-sub">Grupos Top y Bottom (431 resp.)</div></div><div class="ibtn">i<div class="tt">Si tuvieras un espacio o equipo dedicado para realizar los cursos/formaciones en tienda, ¿crees que tu desempeño mejoraría?</div></div></div>
+      <div class="card-hdr"><div><div class="card-title">¿Un espacio dedicado mejoraría el desempeño?</div><div class="card-sub">Grupos Top y Bottom (448 resp.)</div></div><div class="ibtn">i<div class="tt">Si tuvieras un espacio o equipo dedicado para realizar los cursos/formaciones en tienda, ¿crees que tu desempeño mejoraría?</div></div></div>
       <div id="ch-mejoria" style="display:flex;justify-content:center;padding:8px 0"></div>
     </div>
   </div>
 </div>
 
 <!-- ══ CULTURA & LIDERAZGO ══ -->
+
 <div class="page" id="page-cultura">
   <div class="g2" style="margin-top:20px">
     <div class="card">
@@ -349,11 +355,12 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
 </div>
 
 <!-- ══ MOTIVADORES & OBSTÁCULOS ══ -->
+
 <div class="page" id="page-motivacion">
   <div class="sec-lbl" style="margin-top:20px">💡 Motivadores — ¿Qué impulsa a mantener los cursos al día?</div>
   <div class="g2">
     <div class="card" style="margin-bottom:0">
-      <div class="card-hdr"><div><div class="card-title">Factores Motivadores — Total</div><div class="card-sub">Selección múltiple · n y % sobre 510 respondentes</div></div><div class="ibtn">i<div class="tt">¿Qué es lo que más te motiva a mantener tus cursos al día? (Selección múltiple)</div></div></div>
+      <div class="card-hdr"><div><div class="card-title">Factores Motivadores — Total</div><div class="card-sub">Selección múltiple · n y % sobre 527 respondentes</div></div><div class="ibtn">i<div class="tt">¿Qué es lo que más te motiva a mantener tus cursos al día? (Selección múltiple)</div></div></div>
       <div id="ch-motiv-total"></div>
     </div>
     <div class="card" style="margin-bottom:0">
@@ -380,71 +387,169 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);
   </div>
 </div>
 
-<!-- ══ COMPARATIVO ══ -->
+<!-- ══ RRHH OPERACIONES ══ -->
+
 <div class="page" id="page-comparativo">
   <div style="margin-top:20px">
-    <div class="gl">
-      <div class="gl-item"><div class="gl-dot" style="background:var(--top)"></div>Grupo Top <span class="gl-n">(212 resp. · 10 tiendas)</span></div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--bot)"></div>Grupo Bottom <span class="gl-n">(219 resp. · 10 tiendas)</span></div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--mueble)"></div>Grupo Mueble <span class="gl-n">(79 resp. · 3 tiendas piloto)</span></div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--fav);border-radius:50%"></div>Favorable (4–5)</div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--neu);border-radius:50%"></div>Neutro (3)</div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--des);border-radius:50%"></div>Desfavorable (1–2)</div>
-    </div>
 
-    <div class="sec-lbl">Uso &amp; Acceso</div>
-    <div class="g2">
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Frecuencia de Capacitación</div><div class="card-sub">% por grupo</div></div><div class="ibtn">i<div class="tt">¿Con qué frecuencia aproximada realizas tus cursos?</div></div></div><div id="comp-frecuencia"></div></div>
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Momento de Realización</div><div class="card-sub">% por grupo</div></div><div class="ibtn">i<div class="tt">¿En qué momento realizas habitualmente los cursos?</div></div></div><div id="comp-momento"></div></div>
+```
+<!-- FILTRO POR ÁREA -->
+<div class="card" style="margin-bottom:18px">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+        <div class="card-title">Filtrar por Área</div>
+        <div class="card-sub" style="margin-top:0">Clic para activar/desactivar · los gráficos se actualizan solos</div>
+        <button onclick="resetAreaSelect()" style="font-size:9px;font-weight:700;padding:4px 11px;border-radius:99px;border:1px solid var(--border);cursor:pointer;background:var(--bg);color:var(--muted);white-space:nowrap;margin-left:auto">Seleccionar todas</button>
+      </div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap" id="rrhh-area-btns"></div>
     </div>
-    <div class="card"><div class="card-hdr"><div><div class="card-title">Lugar de Realización</div><div class="card-sub">% de respondentes que mencionó cada lugar (selección múltiple)</div></div><div class="ibtn">i<div class="tt">¿En qué lugar sueles realizar los cursos?</div></div></div><div id="comp-lugar"></div></div>
-
-    <div class="sec-lbl">Espacio de Formación</div>
-    <div class="card"><div class="card-hdr"><div><div class="card-title">Condiciones del Espacio — Promedio y % Favorabilidad</div><div class="card-sub">Con Mueble: evalúa Estación · Top y Bottom: lugar habitual</div></div><div class="ibtn">i<div class="tt">Escala 1=Muy malo, 5=Muy bueno. Favorabilidad = % que respondió 4 o 5.</div></div></div><div id="comp-espacio"></div></div>
-
-    <div class="sec-lbl">Cultura &amp; Liderazgo</div>
-    <div class="g2">
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Oportunidad en Jornada</div><div class="card-sub">Favorabilidad por grupo</div></div><div class="ibtn">i<div class="tt">¿Te dan oportunidad de tiempo en jornada para cursos?</div></div></div><div id="comp-oport"></div></div>
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Seguimiento al Progreso</div><div class="card-sub">Favorabilidad por grupo</div></div><div class="ibtn">i<div class="tt">¿Con qué frecuencia recibes seguimiento?</div></div></div><div id="comp-seg"></div></div>
-    </div>
-    <div class="g2">
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Perspectiva sobre los Cursos</div><div class="card-sub">Favorabilidad por grupo</div></div><div class="ibtn">i<div class="tt">En tu experiencia, los cursos y formaciones...</div></div></div><div id="comp-persp"></div></div>
-      <div class="card"><div class="card-hdr"><div><div class="card-title">¿Cómo se enteran de los cursos?</div><div class="card-sub">% menciones (selección múltiple) por grupo</div></div><div class="ibtn">i<div class="tt">¿Cómo te enteras de los cursos que tienes pendientes?</div></div></div><div id="comp-entera"></div></div>
-    </div>
-
-    <div class="sec-lbl">Motivadores &amp; Obstáculos</div>
-    <div class="g2">
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Top 5 Motivadores por Grupo</div><div class="card-sub">% de respondentes</div></div><div class="ibtn">i<div class="tt">¿Qué es lo que más te motiva a mantener tus cursos al día?</div></div></div><div id="comp-motiv"></div></div>
-      <div class="card"><div class="card-hdr"><div><div class="card-title">Obstáculos por Grupo</div><div class="card-sub">% de respondentes</div></div><div class="ibtn">i<div class="tt">¿Cuál es el principal obstáculo para realizar las formaciones?</div></div></div><div id="comp-obst2"></div></div>
+    <div style="display:flex;gap:10px;flex-shrink:0">
+      <div style="text-align:center;background:var(--cyan-light);border-radius:10px;padding:10px 18px;border:1px solid var(--cyan)">
+        <div style="font-size:24px;font-weight:800;color:var(--navy);line-height:1" id="rrhh-total">527</div>
+        <div style="font-size:9px;color:var(--muted);font-weight:700;margin-top:3px;letter-spacing:.06em">RESPUESTAS</div>
+      </div>
+      <div style="text-align:center;background:var(--bg);border-radius:10px;padding:10px 18px;border:1px solid var(--border)">
+        <div style="font-size:24px;font-weight:800;color:var(--navy);line-height:1" id="rrhh-tiendas">23</div>
+        <div style="font-size:9px;color:var(--muted);font-weight:700;margin-top:3px;letter-spacing:.06em">TIENDAS</div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- P1: RESUMEN -->
+<div class="sec-lbl">📊 Resumen General</div>
+<div class="g2">
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">Distribución por Cargo</div></div></div>
+    <div id="rrhh-cargo" style="display:flex;justify-content:center"></div>
+  </div>
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">Respuestas por Tienda</div><div class="card-sub">Clic en encabezado para ordenar · usa el buscador para filtrar</div></div></div>
+    <div style="margin-bottom:8px">
+      <input id="rrhh-tienda-search" type="text" placeholder="🔍 Buscar tienda..." oninput="renderRRHHTiendas()"
+        style="width:100%;padding:6px 10px;border:1px solid var(--border);border-radius:7px;font-family:'Montserrat',sans-serif;font-size:11px;outline:none;color:var(--text)">
+    </div>
+    <div style="max-height:260px;overflow-y:auto">
+      <table class="stores-tbl" style="width:100%">
+        <thead>
+          <tr>
+            <th onclick="sortTiendas('t')" style="cursor:pointer;user-select:none">Tienda <span id="sort-t">↕</span></th>
+            <th onclick="sortTiendas('a')" style="cursor:pointer;user-select:none">Área <span id="sort-a">↕</span></th>
+            <th onclick="sortTiendas('g')" style="cursor:pointer;user-select:none">Grupo <span id="sort-g">↕</span></th>
+            <th onclick="sortTiendas('r')" style="cursor:pointer;user-select:none">Resp. <span id="sort-r">↕</span></th>
+            <th onclick="sortTiendas('p')" style="cursor:pointer;user-select:none">Pobl. <span id="sort-p">↕</span></th>
+            <th onclick="sortTiendas('pct')" style="cursor:pointer;user-select:none">Avance <span id="sort-pct">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="rrhh-tiendas-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- USO Y ACCESO -->
+<div class="sec-lbl">📱 Uso &amp; Acceso</div>
+<div class="g2">
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">¿En qué momento realizan los cursos?</div></div><div class="ibtn">i<div class="tt">¿En qué momento realizas habitualmente los cursos? Durante jornada / Fuera de jornada / Ambos / No logra.</div></div></div>
+    <div id="rrhh-momento" style="display:flex;justify-content:center;padding:6px 0"></div>
+  </div>
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">¿En qué lugar realizan los cursos?</div><div class="card-sub">Selección múltiple</div></div><div class="ibtn">i<div class="tt">¿En qué lugar sueles realizar los cursos? (Selecciona los que apliquen)</div></div></div>
+    <div id="rrhh-lugar"></div>
+  </div>
+</div>
+
+<!-- ESPACIO DE FORMACIÓN -->
+<div class="sec-lbl">🪑 Espacio de Formación</div>
+<div class="g2">
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">¿El mueble facilita la realización de los cursos?</div><div class="card-sub">Solo Grupo Mueble (Perla · José Miguel · Chuao)</div></div><div class="ibtn">i<div class="tt">¿El mueble facilita la realización de tus cursos? Solo Grupo Mueble.</div></div></div>
+    <div id="rrhh-facilita"></div>
+  </div>
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">¿Un espacio dedicado mejoraría el desempeño?</div><div class="card-sub">Grupos Top y Bottom · 448 resp.</div></div><div class="ibtn">i<div class="tt">Si tuvieras un espacio o equipo dedicado para realizar los cursos/formaciones en tienda, ¿crees que tu desempeño mejoraría?</div></div></div>
+    <div id="rrhh-mejoria" style="display:flex;justify-content:center;padding:6px 0"></div>
+  </div>
+</div>
+<div style="background:var(--cyan-light);border-left:3px solid var(--cyan);border-radius:8px;padding:11px 15px;margin-bottom:18px;font-size:11px;line-height:1.7">
+  💡 <strong style="color:var(--navy)">Lectura:</strong> Las tiendas <strong>con</strong> la Estación reportan mayormente "No hace diferencia" o facilita poco. Las tiendas <strong>sin</strong> la estación consideran en un <strong>81%</strong> que sí mejoraría su desempeño — la herramienta existe pero no se ha integrado operativamente.
+</div>
+
+<!-- CULTURA Y LIDERAZGO -->
+<div class="sec-lbl">👥 Cultura &amp; Liderazgo</div>
+<div class="g2">
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">Indicadores de Cultura — Favorabilidad</div><div class="card-sub">% Favorable (4–5) · Neutro (3) · Desfavorable (1–2) — Total global</div></div></div>
+    <div id="rrhh-cultura-total"></div>
+  </div>
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">¿Cómo se enteran de sus Cursos Pendientes?</div><div class="card-sub">% por grupo · selección múltiple</div></div><div class="ibtn">i<div class="tt">¿Cómo te enteras de los cursos que tienes pendientes? (Selección múltiple)</div></div></div>
+    <div id="rrhh-entera"></div>
+  </div>
+</div>
+
+<!-- MOTIVADORES -->
+<div class="sec-lbl">💡 Motivadores</div>
+<div class="card">
+  <div class="card-hdr"><div><div class="card-title">Factores Motivadores — Comparativa por Grupo</div><div class="card-sub">% de respondentes que seleccionó cada factor · selección múltiple</div></div><div class="ibtn">i<div class="tt">¿Qué es lo que más te motiva a mantener tus cursos al día? (Selección múltiple)</div></div></div>
+  <div id="rrhh-motiv"></div>
+</div>
+
+<!-- OBSTÁCULOS -->
+<div class="sec-lbl">🚧 Obstáculos</div>
+<div class="g2">
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">Obstáculos Agrupados — Total</div><div class="card-sub">Respuestas abiertas categorizadas · n y %</div></div><div class="ibtn">i<div class="tt">¿Cuál es el principal obstáculo para realizar las formaciones en tu tienda?</div></div></div>
+    <div id="rrhh-obst-total"></div>
+  </div>
+  <div class="card">
+    <div class="card-hdr"><div><div class="card-title">Comentarios Representativos</div><div class="card-sub">Selecciona categoría · mínimo 10 por grupo</div></div></div>
+    <div class="filter-row" id="rrhh-obst-btns"></div>
+    <div class="comment-area" id="rrhh-obst-comments" style="max-height:400px"></div>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
 <!-- ══ ANÁLISIS ══ -->
+
 <div class="page" id="page-analisis">
   <div style="margin-top:20px">
     <div class="sec-lbl">Hallazgos Clave</div>
-    <div class="analysis-grid">
-      <div class="finding positive"><div class="ftitle">✅ Alta valoración de la formación en todos los grupos <span class="ftag ft-ok">Positivo</span></div><div class="fbody">El <strong>79% del total</strong> valora positivamente los cursos (resp. 4 y 5). Top: <strong>81.1%</strong>, Bottom: <strong>76.3%</strong>, Mueble: <strong>81%</strong>. La actitud no es el problema: son las <strong>condiciones operativas y el tiempo</strong>.</div></div>
-      <div class="finding alert"><div class="ftitle">🚨 Cursos fuera de turno: el mayor obstáculo operativo <span class="ftag ft-a">Crítico</span></div><div class="fbody">El <strong>56% realiza cursos solo fuera de su jornada</strong>. Bottom llega al <strong>60%</strong>. El Mueble alcanza el <strong>91% en casa</strong> — paradójicamente el más alto. El grupo Top logra más realización "en ambos momentos" (<strong>35%</strong> vs 28% Bottom), señal de mejor gestión del tiempo.</div></div>
-      <div class="finding warn"><div class="ftitle">⚠️ El mueble no se usa aunque existe <span class="ftag ft-w">Alerta</span></div><div class="fbody">El <strong>45% del Grupo Mueble nunca ha utilizado la estación</strong>. Solo el 13% lo usa frecuente o siempre. A pesar del NPS de 8.4/10 y que el 54% de quienes lo usan dice que facilita los cursos, el celular personal (<strong>76% del grupo</strong>) sigue siendo el dispositivo principal.</div></div>
-      <div class="finding"><div class="ftitle">📊 Embajadores vs supervisor: el canal define al grupo <span class="ftag ft-i">Clave</span></div><div class="fbody">El grupo Top depende más de <strong>embajadores</strong> (50%) mientras el Bottom depende más del <strong>supervisor directo</strong> (58%). El Mueble replica el patrón del Bottom (supervisor: 56%). El liderazgo distribuido con embajadores es un diferenciador de éxito.</div></div>
-      <div class="finding positive"><div class="ftitle">💡 El mueble mejora la percepción de accesibilidad <span class="ftag ft-ok">Hallazgo</span></div><div class="fbody">El grupo Mueble valora significativamente más la <strong>"Facilidad del equipo"</strong> como motivador (34% vs 11% Top, 16% Bottom). Los atributos mejor valorados son Iluminación (4.11) y Estado físico (4.10). La conectividad (3.70) y la privacidad (3.19) son los puntos a mejorar.</div></div>
-      <div class="finding alert"><div class="ftitle">🕐 El tiempo libre en jornada es más bajo en el Grupo Mueble <span class="ftag ft-a">Dato</span></div><div class="fbody">El grupo Mueble tiene la menor oportunidad de tiempo en jornada: <strong>53% desfavorable</strong> vs 46% Top y 41% Bottom. Esto explica por qué el mueble no se aprovecha — si no hay tiempo asignado, el espacio queda vacío aunque sea bueno.</div></div>
-      <div class="finding positive"><div class="ftitle">🏆 El Grupo Top se diferencia en seguimiento y frecuencia <span class="ftag ft-ok">Positivo</span></div><div class="fbody">El grupo Top tiene el mayor porcentaje de capacitación frecuente (1–2x semana: <strong>49.5%</strong> vs 36.9% Bottom, 39.3% Mueble) y el mayor nivel de seguimiento favorable (<strong>62.7%</strong>). La frecuencia de práctica y el seguimiento activo van de la mano.</div></div>
-      <div class="finding warn"><div class="ftitle">🔒 Contraseña y ubicación: las dos mejoras prioritarias del mueble <span class="ftag ft-w">Accionable</span></div><div class="fbody">Las respuestas abiertas indican que el <strong>68% no cambiaría nada</strong> del mueble, pero quienes lo harían señalan: ubicación expuesta (ruido/falta de privacidad) y la contraseña alfanumérica como barrera de acceso rápido. Dos mejoras de bajo costo y alto impacto.</div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--mueble);padding:7px 14px;background:#e8f5e9;border-radius:8px;text-align:center">✅ Hallazgos Positivos</div>
+        <div class="finding positive"><div class="ftitle">✅ Alta valoración de la formación en todos los grupos <span class="ftag ft-ok">Positivo</span></div><div class="fbody">El <strong>79% del total</strong> valora positivamente los cursos (resp. 4 y 5). Top: <strong>81.1%</strong>, Bottom: <strong>76.3%</strong>, Mueble: <strong>81%</strong>. La actitud no es el problema: son las <strong>condiciones operativas y el tiempo</strong>.</div></div>
+        <div class="finding positive"><div class="ftitle">💡 El mueble mejora la percepción de accesibilidad <span class="ftag ft-ok">Hallazgo</span></div><div class="fbody">El grupo Mueble valora significativamente más la <strong>"Facilidad del equipo"</strong> como motivador (34% vs 11% Top, 17% Bottom). Los atributos mejor valorados son Iluminación (4.11) y Estado físico (4.10). La conectividad (3.70) y la privacidad (3.19) son los puntos a mejorar.</div></div>
+        <div class="finding positive"><div class="ftitle">🏆 El Grupo Top se diferencia en seguimiento y frecuencia <span class="ftag ft-ok">Positivo</span></div><div class="fbody">El grupo Top tiene el mayor porcentaje de capacitación frecuente (1–2x semana: <strong>49.5%</strong> vs 36.9% Bottom) y el mayor nivel de seguimiento favorable (<strong>62.7%</strong>). La frecuencia de práctica y el seguimiento activo van de la mano.</div></div>
+        <div class="finding"><div class="ftitle">📊 Embajadores vs supervisor: el canal define al grupo <span class="ftag ft-i">Clave</span></div><div class="fbody">El grupo Top depende más de <strong>embajadores</strong> (50%) mientras el Bottom depende más del <strong>supervisor directo</strong> (59.7%). El Mueble replica el patrón del Bottom (56%). El liderazgo distribuido con embajadores es un diferenciador de éxito.</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#c62828;padding:7px 14px;background:#ffebee;border-radius:8px;text-align:center">⚠️ Alertas y Oportunidades</div>
+        <div class="finding alert"><div class="ftitle">🚨 Cursos fuera de turno: el mayor obstáculo operativo <span class="ftag ft-a">Crítico</span></div><div class="fbody">El <strong>56% realiza cursos solo fuera de su jornada</strong>. Bottom llega al <strong>60%</strong>. El Mueble alcanza el <strong>91% en casa</strong>. El grupo Top logra más realización "en ambos momentos" (<strong>35%</strong> vs 28% Bottom), señal de mejor gestión del tiempo.</div></div>
+        <div class="finding warn"><div class="ftitle">⚠️ El mueble no se usa aunque existe <span class="ftag ft-w">Alerta</span></div><div class="fbody">El <strong>45% del Grupo Mueble nunca ha utilizado la estación</strong>. Solo el 13% lo usa frecuente o siempre. A pesar del NPS de 8.4/10, el celular personal (<strong>76% del grupo</strong>) sigue siendo el dispositivo principal.</div></div>
+        <div class="finding alert"><div class="ftitle">🕐 El tiempo en jornada es más bajo en el Grupo Mueble <span class="ftag ft-a">Dato</span></div><div class="fbody">El grupo Mueble tiene la menor oportunidad de tiempo en jornada: <strong>53% desfavorable</strong> vs 46% Top y 39% Bottom. Esto explica por qué el mueble no se aprovecha — sin tiempo asignado, el espacio queda vacío aunque sea bueno.</div></div>
+        <div class="finding warn"><div class="ftitle">🔒 Contraseña y ubicación: mejoras prioritarias del mueble <span class="ftag ft-w">Accionable</span></div><div class="fbody">Las respuestas abiertas indican que el <strong>68% no cambiaría nada</strong> del mueble, pero quienes lo harían señalan: ubicación expuesta (ruido/privacidad) y la contraseña alfanumérica como barrera de acceso rápido. Dos mejoras de bajo costo y alto impacto.</div></div>
+      </div>
     </div>
 
-    <div style="background:var(--cyan-light);border:1px solid var(--cyan);border-radius:10px;padding:16px 20px;margin-bottom:22px;font-size:11px;line-height:1.8">
-      <strong style="color:var(--navy)">Conclusión:</strong> Los datos muestran que <strong style="color:var(--navy)">el mueble es un habilitador necesario pero no suficiente</strong>. Las tiendas Top logran mejores resultados sin él gracias a: cultura de seguimiento, uso de embajadores y flexibilidad operativa. El Grupo Mueble tiene la infraestructura pero no el tiempo ni el hábito de uso. El reto no es tecnológico, <strong style="color:var(--navy)">es operativo y cultural</strong>.
-    </div>
+```
+<div style="background:var(--cyan-light);border:1px solid var(--cyan);border-radius:10px;padding:16px 20px;margin-bottom:22px;font-size:11px;line-height:1.8">
+  <strong style="color:var(--navy)">Conclusión:</strong> Los datos muestran que <strong style="color:var(--navy)">el mueble es un habilitador necesario pero no suficiente</strong>. Las tiendas Top logran mejores resultados sin él gracias a: cultura de seguimiento, uso de embajadores y flexibilidad operativa. El Grupo Mueble tiene la infraestructura pero no el tiempo ni el hábito de uso. El reto no es tecnológico, <strong style="color:var(--navy)">es operativo y cultural</strong>.
+</div>
 
-    <div class="sec-lbl">Recomendaciones Estratégicas</div>
-    <div class="rec"><div class="rec-num">1</div><div><div class="rec-title">Asignar tiempo protegido dentro de la jornada para formación</div><div class="rec-body">El principal obstáculo (52% de menciones) es la falta de tiempo. Sin un bloque de tiempo protegido — aunque sea 15–20 min en días de menor tráfico — el mueble y cualquier otra intervención pierde efectividad. Es la palanca con mayor impacto potencial.</div></div></div>
-    <div class="rec"><div class="rec-num">2</div><div><div class="rec-title">Activar el mueble con rutinas y protocolo de uso</div><div class="rec-body">El 45% nunca lo usa. Incorporar el uso de la estación a rutinas operativas (apertura de turno, brief de equipo) y simplificar el acceso (revisar la contraseña alfanumérica) puede duplicar la adopción sin inversión adicional.</div></div></div>
-    <div class="rec"><div class="rec-num">3</div><div><div class="rec-title">Replicar el modelo de Embajadores de Capacitación</div><div class="rec-body">Las tiendas Top tienen mayor uso de embajadores (50% vs 42% Bottom). Fortalecer y formalizar este rol en las tiendas Bottom y Mueble — con reconocimiento y métricas claras — es el cambio cultural de menor costo y mayor retorno.</div></div></div>
-    <div class="rec"><div class="rec-num">4</div><div><div class="rec-title">Mejorar privacidad y ubicación del mueble</div><div class="rec-body">La privacidad (3.19/5) es el atributo peor valorado y la ubicación es la principal queja en respuestas abiertas. Reubicar la estación a un espacio con menos tráfico y ruido puede mejorar significativamente la experiencia de uso.</div></div></div>
-    <div class="rec"><div class="rec-num">5</div><div><div class="rec-title">Fortalecer el canal de autogestión y notificación</div><div class="rec-body">Solo el 32% hace autogestión con el dashboard. El 58% depende de que alguien le avise. Notificaciones push en dispositivo personal + cartelería en tienda pueden reducir la dependencia del supervisor y empoderar al colaborador.</div></div></div>
+<div class="sec-lbl">Recomendaciones Estratégicas</div>
+<div class="rec"><div class="rec-num">1</div><div><div class="rec-title">Asignar tiempo protegido dentro de la jornada para formación</div><div class="rec-body">El principal obstáculo (52% de menciones) es la falta de tiempo. Sin un bloque de tiempo protegido — aunque sea 15–20 min en días de menor tráfico — el mueble y cualquier otra intervención pierde efectividad. Es la palanca con mayor impacto potencial.</div></div></div>
+<div class="rec"><div class="rec-num">2</div><div><div class="rec-title">Activar el mueble con rutinas y protocolo de uso</div><div class="rec-body">El 45% nunca lo usa. Incorporar el uso de la estación a rutinas operativas (apertura de turno, brief de equipo) y simplificar el acceso (revisar la contraseña alfanumérica) puede duplicar la adopción sin inversión adicional.</div></div></div>
+<div class="rec"><div class="rec-num">3</div><div><div class="rec-title">Replicar el modelo de Embajadores de Capacitación</div><div class="rec-body">Las tiendas Top tienen mayor uso de embajadores (50% vs 42% Bottom). Fortalecer y formalizar este rol en las tiendas Bottom y Mueble — con reconocimiento y métricas claras — es el cambio cultural de menor costo y mayor retorno.</div></div></div>
+<div class="rec"><div class="rec-num">4</div><div><div class="rec-title">Mejorar privacidad y ubicación del mueble</div><div class="rec-body">La privacidad (3.19/5) es el atributo peor valorado y la ubicación es la principal queja en respuestas abiertas. Reubicar la estación a un espacio con menos tráfico y ruido puede mejorar significativamente la experiencia de uso.</div></div></div>
+<div class="rec"><div class="rec-num">5</div><div><div class="rec-title">Fortalecer el canal de autogestión y notificación</div><div class="rec-body">Solo el 32% hace autogestión con el dashboard. El 58% depende de que alguien le avise. Notificaciones push en dispositivo personal + cartelería en tienda pueden reducir la dependencia del supervisor y empoderar al colaborador.</div></div></div>
+```
+
   </div>
 </div>
 
@@ -504,23 +609,23 @@ const D = {
   },
   obstaculos: [
     {cat:"Falta de tiempo",n:275,pct:52.2,cls:'#e57373',
-      comments:["El tiempo","No tener una organización y en ocasiones el tiempo de realizar los cursos en la tienda, generalmente cuesta dejar una actividad importante","Tiempo, frecuentemente debo dedicar tiempo adicional a mi jornada laboral a realizar los cursos","La planificación dentro de la jornada para tener espacio de concentración","Solo nos dejan realizarlos en la hora de descanso"]},
-    {cat:"Otros",n:91,pct:17.3,cls:'#b0bec5',
-      comments:["Sobre tareas diarias","Los horarios","Las tareas diarias y a veces somos pocos","Los procesos y actividades de la tienda","Mis actividades laborales y de estudio"]},
+      comments:["El tiempo","No tener una organización y el tiempo de realizar los cursos en la tienda, generalmente cuesta dejar una actividad importante","Tiempo, frecuentemente debo dedicar tiempo adicional a mi jornada laboral","La planificación dentro de la jornada para tener espacio de concentración","Solo nos dejan realizarlos en la hora de descanso","El tiempo, ya que en la tienda todo es muy acelerado","No tengo tiempo en jornada para realizar las capacitaciones","La operatividad del día no me permite sentarme a realizarlos","No hay momentos tranquilos para completar los cursos","El tiempo libre es muy limitado en tienda","Los descansos son cortos y es el único momento disponible"]},
+    {cat:"Operatividad y tareas",n:91,pct:17.3,cls:'#b0bec5',
+      comments:["Sobre tareas diarias","Los horarios","Las tareas diarias y a veces somos pocos","Los procesos y actividades de la tienda","Mis actividades laborales y de estudio","La dinámica operativa de la tienda","El volumen de trabajo diario","Las responsabilidades del cargo no permiten parar","Las actividades del piso de ventas","Las múltiples tareas asignadas simultáneamente","La rotación de tareas entre compañeros"]},
     {cat:"Sin obstáculos",n:57,pct:10.8,cls:'#81c784',
-      comments:["Ninguno","Hasta ahora ninguno","No hay nada que lo impida, el que no lo hace es por flojo","Ninguno, he podido hacer mis cursos sin inconveniente alguno","Sin sugerencias"]},
+      comments:["Ninguno","Hasta ahora ninguno","No hay nada que lo impida, el que no lo hace es por flojo","Ninguno, he podido hacer mis cursos sin inconveniente alguno","Sin sugerencias","Por ahora no tengo obstáculos","Ninguno, me organizo bien","No tengo barreras para hacerlos","Ninguno, los realizo en casa sin problema","Todo bien, logro completarlos","Sin inconvenientes hasta el momento"]},
     {cat:"Falta de espacio",n:29,pct:5.5,cls:'#f57c00',
-      comments:["Buscar el espacio adecuado para concentrarse al 100%","No disponibilidad de un cubículo para tal fin","No hay el espacio adecuado","No hay un área destinada con equipo computador disponible","Concentración"]},
+      comments:["Buscar el espacio adecuado para concentrarse al 100%","No disponibilidad de un cubículo para tal fin","No hay el espacio adecuado","No hay un área destinada con equipo computador disponible","Concentración, no hay dónde hacerlos tranquilo","No hay privacidad para realizarlos","El ruido del piso de ventas impide concentrarse","Falta un espacio físico dedicado","No hay donde sentarse cómodamente","No existe un área equipada para esto","La falta de un espacio propio dificulta la concentración"]},
     {cat:"Conectividad / equipo",n:26,pct:4.9,cls:'#0097D8',
-      comments:["El internet","Lo tardío que suele ser por la mala conexión de internet","No hay un equipo donde escuchar los videos y concentrarse","Falta de Equipos (PC)","El internet de la tienda es muy lento"]},
+      comments:["El internet","Lo tardío que suele ser por la mala conexión de internet","No hay un equipo donde escuchar los videos y concentrarse","Falta de equipos (PC)","El internet de la tienda es muy lento","La conexión a internet falla constantemente","No hay computadoras disponibles para todos","El equipo compartido genera tiempos de espera","La señal wifi en tienda es deficiente","Los equipos son lentos y se traban","Sin dispositivo propio tengo que esperar turno"]},
     {cat:"Falta de personal",n:20,pct:3.8,cls:'#7b1fa2',
-      comments:["La falta de personal","Tenemos poco personal en tienda","El personal nuevo ingreso tiene todos los cursos acumulados y se siente abrumado","La falta de disposición de algunos colaboradores","La falta de compromiso del equipo"]},
+      comments:["La falta de personal","Tenemos poco personal en tienda","El personal nuevo ingreso tiene todos los cursos acumulados y se siente abrumado","La falta de disposición de algunos colaboradores","La falta de compromiso del equipo","Somos pocos y no podemos dejar el piso solo","Con poco personal no puedo ausentarme a hacer cursos","El equipo reducido genera dependencia operativa","Sin relevo no puedo tomar tiempo para capacitarme","La ausencia de compañeros impacta mi disponibilidad","El nuevo ingreso llega con mucha carga de cursos pendientes"]},
     {cat:"Exceso trabajo/clientes",n:10,pct:1.9,cls:'#ff8a65',
-      comments:["El exceso de trabajo","Fluencia de clientes en la tienda","Las horas pico y clientes que requieren atención más larga","Hay clientes que atender y para mí es prioridad el cliente"]},
+      comments:["El exceso de trabajo","Fluencia de clientes en la tienda","Las horas pico y clientes que requieren atención más larga","Hay clientes que atender y para mí es prioridad el cliente","La cantidad de clientes no permite parar","En días de alta afluencia es imposible hacer cursos","Priorizo siempre al cliente sobre la capacitación"]},
     {cat:"Planificación personal",n:7,pct:1.3,cls:'#9e9e9e',
-      comments:["Planificación","Acordarme de la ejecución","La organización","Organización por parte de los supervisores"]}
+      comments:["Planificación","Acordarme de la ejecución","La organización","Organización por parte de los supervisores","Me olvido de realizarlos cuando tengo tiempo","No tengo un horario fijo para hacerlos","La falta de disciplina personal para organizarme"]}
   ],
-  obst_grupos: {
+    obst_grupos: {
     top:    {n:212,"Falta de tiempo":55.7,"Sin obstáculos":11.3,"Falta de espacio":4.7,"Conectividad":4.2,"Falta de personal":4.2,"Exceso trabajo":2.4,"Planificación":0.5,"Otros":17.0},
     bottom: {n:236,"Falta de tiempo":51.3,"Sin obstáculos":7.2,"Falta de espacio":6.8,"Conectividad":6.4,"Falta de personal":3.4,"Exceso trabajo":2.1,"Planificación":2.1,"Otros":18.6},
     mueble: {n:79, "Falta de tiempo":45.6,"Sin obstáculos":20.3,"Falta de espacio":3.8,"Conectividad":2.5,"Falta de personal":3.8,"Planificación":1.3,"Otros":13.9}
@@ -755,19 +860,9 @@ function obstsGroupsChart(el) {
 }
 
 function obstComments() {
-  const btnsEl=document.getElementById('obst-btns');
-  const dispEl=document.getElementById('obst-comments');
-  if(!btnsEl||!dispEl) return;
-  btnsEl.innerHTML=D.obstaculos.map((d,i)=>`<button class="filter-btn${i===0?' active-f':''}" onclick="showObstComments(${i},this)">${d.cat.split('/')[0].trim()}</button>`).join('');
-  showObstComments(0,btnsEl.querySelectorAll('button')[0]);
+  const obstRenamed = D.obstaculos.map(o=>({...o, cat: o.cat==='Otros'?'Operatividad y tareas':o.cat}));
+  buildObstComments('obst-btns','obst-comments', obstRenamed);
 }
-window.showObstComments=function(idx,btn){
-  document.querySelectorAll('#obst-btns .filter-btn').forEach(b=>{b.classList.remove('active-f')});
-  btn.classList.add('active-f');
-  const d=D.obstaculos[idx];
-  document.getElementById('obst-comments').innerHTML=`<div style="font-size:10px;color:var(--muted);margin-bottom:8px"><strong>${d.n} respuestas</strong> categorizadas como "${d.cat}"</div>`+
-    d.comments.map(c=>`<div class="cpill">${c}</div>`).join('');
-};
 
 function tiendaTable(filter='all') {
   const tbody=document.getElementById('tiendas-tbody');
@@ -800,9 +895,9 @@ function renderAll() {
   // USO
   hbarNP(document.getElementById('ch-frecuencia'), D.frecuencia, 510, PAL);
   donut(document.getElementById('ch-momento'), D.momento, ['#f57c00',NAVY,GP.mueble,NEU]);
-  hbarNP(document.getElementById('ch-equipo-topbot'), D.equipo_tb, 510, [NAVY,CYAN,'#f57c00',GP.mueble]);
+  hbarNP(document.getElementById('ch-equipo-topbot'), D.equipo_tb, 448, [NAVY,CYAN,'#f57c00',GP.mueble]);
   hbarNP(document.getElementById('ch-equipo-mueble'), D.equipo_mueble, 79, [NAVY,CYAN,'#f57c00',GP.mueble,'#7b1fa2']);
-  hbarNP(document.getElementById('ch-lugar'), D.lugar_total, 510, PAL);
+  hbarNP(document.getElementById('ch-lugar'), D.lugar_total, 527, PAL);
   compGroupedBars(document.getElementById('ch-lugar-grupos'), D.comp_lugar, null);
 
   // ESPACIO
@@ -811,7 +906,7 @@ function renderAll() {
   hbarColor(document.getElementById('ch-facilita'), D.facilita, 79, (l,i)=>{const k=parseInt(l[0]);return k>=4?GP.mueble:k==3?NEU:k<=2?DES:NEU;});
   attrs3g(document.getElementById('ch-espacio-3grupos'));
   npsChart(document.getElementById('ch-nps'));
-  donut(document.getElementById('ch-mejoria'), D.mejoria, [GP.mueble,CYAN,NEU], 431);
+  donut(document.getElementById('ch-mejoria'), D.mejoria, [GP.mueble,CYAN,NEU], 448);
   // Gusto y cambiar
   hbarNP(document.getElementById('ch-gusto'), D.gusto, 79, [GP.mueble,CYAN,NAVY,'#f57c00','#7b1fa2',NEU,'#b0bec5']);
   hbarNP(document.getElementById('ch-cambiar'), D.cambiar, 79, [GP.mueble,NEU,'#f57c00','#c62828',CYAN,NAVY,'#7b1fa2',DES]);
@@ -823,7 +918,7 @@ function renderAll() {
   entera3groups(document.getElementById('ch-entera-grupos'));
 
   // MOTIVADORES
-  hbarNP(document.getElementById('ch-motiv-total'), D.motiv, 510, PAL);
+  hbarNP(document.getElementById('ch-motiv-total'), D.motiv, 527, PAL);
   compGroupedBars(document.getElementById('ch-motiv-grupos'), {
     top:Object.fromEntries(D.motiv_grupos.top), bottom:Object.fromEntries(D.motiv_grupos.bottom), mueble:Object.fromEntries(D.motiv_grupos.mueble)
   }, null);
@@ -850,6 +945,246 @@ function renderAll() {
   obstsGroupsChart(document.getElementById('comp-obst2'));
 }
 
+// ── RRHH OPERACIONES ──
+
+const AREA_MAP = {
+  'Á1':['Índigo','Albita'],'Á2':['Pirineos','Cuartel Baralt'],
+  'Á3':['Madre Cabrini','Boulevart de Catia'],'Á4':['Irene','José Miguel','Chuao'],
+  'Á5':['Ocumito'],'Á7':['Perla','Cielo'],'Á9':['El Bosque'],
+  'Á10':['Oro Negro'],'Á11':['Marta'],
+  'Á12':['Serranía','Liliana','Tunantal','David'],
+  'Á14':['Aguamarina','Elizabeth'],'Á15':['Scarlet','Susana']
+};
+
+let activeAreas = new Set(Object.keys(AREA_MAP));
+let sortCol='pct', sortDir=-1;
+
+function getFilteredTiendas(){
+  return D.tiendas.filter(t=>[...activeAreas].some(a=>(AREA_MAP[a]||[]).some(n=>t.t.includes(n))));
+}
+
+function getGroupWeights(){
+  const w={top:0,bottom:0,mueble:0};
+  getFilteredTiendas().forEach(t=>{ w[t.g]=(w[t.g]||0)+t.r; });
+  return w;
+}
+
+function scaledMomento(){
+  const w=getGroupWeights();
+  const src={
+    top:    {"Fuera de jornada":52.4,"En ambos momentos":35.4,"Durante jornada":9.9,"No logra realizarlos":2.4},
+    bottom: {"Fuera de jornada":60.2,"En ambos momentos":28.0,"Durante jornada":10.2,"No logra realizarlos":1.7},
+    mueble: {"Fuera de jornada":53.2,"En ambos momentos":39.2,"Durante jornada":2.5,"No logra realizarlos":5.1}
+  };
+  const keys=["Fuera de jornada","En ambos momentos","Durante jornada","No logra realizarlos"];
+  const totalW=Object.values(w).reduce((s,v)=>s+v,0);
+  if(totalW===0) return D.momento;
+  return keys.map(k=>{
+    let val=0;
+    ['top','bottom','mueble'].forEach(g=>{ if(w[g]>0) val+=((src[g]||{})[k]||0)*w[g]/totalW; });
+    const n=Math.round(val/100*totalW);
+    return [k, n, parseFloat(val.toFixed(1))];
+  }).filter(r=>r[1]>0);
+}
+
+function scaledLugar(){
+  const w=getGroupWeights();
+  const src={
+    top:    {"En mi casa":78.8,"En el comedor o área de descanso":28.3,"En la oficina de la tienda":23.1,"En el piso de ventas":8.0,"Otros lugares":2.0},
+    bottom: {"En mi casa":80.9,"En el comedor o área de descanso":22.9,"En la oficina de la tienda":23.3,"En el piso de ventas":3.8,"Otros lugares":2.8},
+    mueble: {"En mi casa":91.1,"En el comedor o área de descanso":32.9,"En la oficina de la tienda":21.5,"En el piso de ventas":2.5,"Otros lugares":0.0}
+  };
+  const keys=["En mi casa","En el comedor o área de descanso","En la oficina de la tienda","En el piso de ventas","Otros lugares"];
+  const totalW=Object.values(w).reduce((s,v)=>s+v,0);
+  if(totalW===0) return D.lugar_total;
+  return keys.map(k=>{
+    let val=0;
+    ['top','bottom','mueble'].forEach(g=>{ if(w[g]>0) val+=((src[g]||{})[k]||0)*w[g]/totalW; });
+    const n=Math.round(val/100*totalW);
+    return [k, n, parseFloat(val.toFixed(1))];
+  }).filter(r=>r[1]>0);
+}
+
+function buildAreaBtns(){
+  const el=document.getElementById('rrhh-area-btns');
+  if(!el) return;
+  const areas=Object.keys(AREA_MAP).sort((a,b)=>parseInt(a.slice(1))-parseInt(b.slice(1)));
+  el.innerHTML=areas.map(a=>{
+    const tiendas=AREA_MAP[a].join(', ');
+    const isActive=activeAreas.has(a);
+    return `<button
+      id="area-btn-${a.replace('Á','')}"
+      onclick="toggleAreaBtn('${a}',this)"
+      title="${tiendas}"
+      style="font-size:10px;font-weight:700;padding:6px 13px;border-radius:99px;cursor:pointer;transition:all .15s;border:2px solid ${isActive?'var(--navy)':'var(--border)'};background:${isActive?'var(--navy)':'var(--bg)'};color:${isActive?'#fff':'var(--muted)'};white-space:nowrap">
+      ${a}
+    </button>`;
+  }).join('');
+}
+
+function toggleAreaBtn(area, btn){
+  if(activeAreas.has(area)){
+    // Don't allow deselecting all
+    if(activeAreas.size===1) return;
+    activeAreas.delete(area);
+    btn.style.background='var(--bg)';
+    btn.style.color='var(--muted)';
+    btn.style.borderColor='var(--border)';
+  } else {
+    activeAreas.add(area);
+    btn.style.background='var(--navy)';
+    btn.style.color='#fff';
+    btn.style.borderColor='var(--navy)';
+  }
+  renderRRHH();
+}
+
+function resetAreaSelect(){
+  activeAreas=new Set(Object.keys(AREA_MAP));
+  buildAreaBtns();
+  renderRRHH();
+}
+
+// Keep these as no-ops for compatibility
+function onAreaSelectChange(){}
+function removeArea(a){ toggleAreaBtn(a, document.getElementById('area-btn-'+a.replace('Á',''))); }
+function updateAreaTags(){}
+
+function sortTiendas(col){
+  if(sortCol===col) sortDir*=-1; else{sortCol=col;sortDir=(col==='t'||col==='a'||col==='g')?1:-1;}
+  ['t','a','g','r','p','pct'].forEach(c=>{
+    const el=document.getElementById('sort-'+c);
+    if(el) el.textContent=c===sortCol?(sortDir===1?'↑':'↓'):'↕';
+  });
+  renderRRHHTiendas();
+}
+
+function renderRRHHTiendas(){
+  const tbody=document.getElementById('rrhh-tiendas-tbody');
+  if(!tbody) return;
+  const search=(document.getElementById('rrhh-tienda-search')||{}).value||'';
+  const gc={top:CYAN,bottom:'#f57c00',mueble:GP.mueble};
+  const bc={top:'btop',bottom:'bbot',mueble:'bmueble'};
+  const bl={top:'Top',bottom:'Bottom',mueble:'Mueble'};
+  let rows=getFilteredTiendas();
+  if(search) rows=rows.filter(t=>t.t.toLowerCase().includes(search.toLowerCase())||t.a.toLowerCase().includes(search.toLowerCase()));
+  rows=[...rows].sort((a,b)=>{
+    const av=a[sortCol], bv=b[sortCol];
+    return typeof av==='string'?sortDir*av.localeCompare(bv):sortDir*(av-bv);
+  });
+  tbody.innerHTML=rows.map(s=>`<tr>
+    <td style="font-weight:600">${s.t}</td><td>${s.a}</td>
+    <td><span class="badge ${bc[s.g]}">${bl[s.g]}</span></td>
+    <td style="font-weight:700">${s.r}</td><td style="color:var(--muted)">${s.p}</td>
+    <td><div style="display:flex;align-items:center;gap:6px">
+      <div class="mb-outer" style="min-width:50px"><div class="mb-inner" style="width:${(Math.min(s.pct,1)*100).toFixed(0)}%;background:${gc[s.g]}"></div></div>
+      <span style="font-weight:800;color:${gc[s.g]};font-size:11px">${Math.round(s.pct*100)}%</span>
+    </div></td>
+  </tr>`).join('');
+}
+
+function renderRRHH(){
+  const filtered=getFilteredTiendas();
+  const totalR=filtered.reduce((s,t)=>s+t.r,0);
+  const totalP=filtered.reduce((s,t)=>s+t.p,0);
+  const el1=document.getElementById('rrhh-total'), el2=document.getElementById('rrhh-tiendas');
+  if(el1) el1.textContent=totalR;
+  if(el2) el2.textContent=filtered.length;
+  renderRRHHTiendas();
+
+  // Cargo proportional
+  const cargoScaled=D.cargo.map(r=>{
+    const n=totalR>0?Math.round(r[1]*totalR/527):0;
+    return [r[0],n,totalR>0?parseFloat((n/totalR*100).toFixed(1)):0];
+  });
+  donut(document.getElementById('rrhh-cargo'),cargoScaled.filter(r=>r[1]>0),[NAVY,CYAN,'#f57c00',GP.mueble]);
+
+  // Momento & Lugar - weighted
+  const momData=scaledMomento();
+  donut(document.getElementById('rrhh-momento'),momData,['#f57c00',NAVY,GP.mueble,NEU]);
+  hbarNP(document.getElementById('rrhh-lugar'),scaledLugar(),totalR,PAL);
+
+  // Facilita
+  const muelbeActive=filtered.some(t=>t.g==='mueble');
+  const facilitaEl=document.getElementById('rrhh-facilita');
+  if(facilitaEl){
+    if(muelbeActive) hbarColor(facilitaEl,D.facilita,79,(l)=>{const k=parseInt(l[0]);return k>=4?GP.mueble:k==3?NEU:DES;});
+    else facilitaEl.innerHTML='<div style="padding:20px;text-align:center;color:var(--muted);font-size:11px">⚠️ No hay tiendas con Estación en la selección actual</div>';
+  }
+
+  // Mejoria
+  const tbActive=filtered.some(t=>t.g!=='mueble');
+  const mejEl=document.getElementById('rrhh-mejoria');
+  if(mejEl){
+    if(tbActive) donut(mejEl,D.mejoria,[GP.mueble,CYAN,NEU],448);
+    else mejEl.innerHTML='<div style="padding:20px;text-align:center;color:var(--muted);font-size:11px">⚠️ Solo aplica a Grupos Top y Bottom</div>';
+  }
+
+  renderCulturaTotal();
+
+  // Entera & Motiv - only active groups
+  const activeG=['top','bottom','mueble'].filter(g=>filtered.some(t=>t.g===g));
+  const enteraData={};
+  activeG.forEach(g=>{ enteraData[g]=Object.fromEntries(D.entera_grupos[g].map(r=>[r[0],r[2]])); });
+  compGroupedBars(document.getElementById('rrhh-entera'),enteraData,null,activeG);
+  const motivData={};
+  activeG.forEach(g=>{ motivData[g]=Object.fromEntries(D.motiv_grupos[g]); });
+  compGroupedBars(document.getElementById('rrhh-motiv'),motivData,null,activeG);
+
+  // Obstáculos
+  const obstRenamed=D.obstaculos.map(o=>({...o,cat:o.cat==='Otros'?'Operatividad y tareas':o.cat}));
+  obstsChart(document.getElementById('rrhh-obst-total'),obstRenamed);
+  buildObstComments('rrhh-obst-btns','rrhh-obst-comments',obstRenamed);
+}
+
+function renderCulturaTotal(){
+  const el=document.getElementById('rrhh-cultura-total');
+  if(!el) return;
+  const items=[
+    {label:'Oportunidad en Jornada',fav:D.oport.total.fav,neu:D.oport.total.neu,des:D.oport.total.des,tt:'¿Te dan oportunidad de dedicar tiempo a cursos en jornada?'},
+    {label:'Seguimiento al Progreso',fav:D.seg.total.fav,neu:D.seg.total.neu,des:D.seg.total.des,tt:'¿Con qué frecuencia recibes seguimiento sobre tu progreso?'},
+    {label:'Perspectiva sobre los Cursos',fav:D.persp.total.fav,neu:D.persp.total.neu,des:D.persp.total.des,tt:'En tu experiencia, los cursos y formaciones te: 1=Interrumpen, 5=Ayudan mucho.'},
+  ];
+  el.innerHTML=`<div style="display:flex;flex-direction:column;gap:14px">${items.map(item=>`
+    <div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span style="font-size:11px;font-weight:700">${item.label}</span>
+        <div class="ibtn" style="width:16px;height:16px;font-size:9px">i<div class="tt">${item.tt}</div></div>
+      </div>
+      <div class="fav-stack">
+        <div class="fav-seg" style="width:${item.fav}%;background:${FAV};min-width:0">${item.fav>=14?item.fav+'%':''}</div>
+        <div class="fav-seg" style="width:${item.neu}%;background:${NEU};min-width:0">${item.neu>=14?item.neu+'%':''}</div>
+        <div class="fav-seg" style="width:${item.des}%;background:${DES};min-width:0">${item.des>=14?item.des+'%':''}</div>
+      </div>
+      <div class="fav-leg" style="margin-top:4px">
+        <div class="fav-leg-item"><div class="fav-leg-dot" style="background:${FAV}"></div>Favorable ${item.fav}%</div>
+        <div class="fav-leg-item"><div class="fav-leg-dot" style="background:${NEU}"></div>Neutro ${item.neu}%</div>
+        <div class="fav-leg-item"><div class="fav-leg-dot" style="background:${DES}"></div>Desfav. ${item.des}%</div>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+function buildObstComments(btnId,displayId,obstData){
+  const btnsEl=document.getElementById(btnId), dispEl=document.getElementById(displayId);
+  if(!btnsEl||!dispEl) return;
+  window['_obstData_'+btnId]=obstData;
+  btnsEl.innerHTML=obstData.map((d,i)=>
+    `<button class="filter-btn${i===0?' active-f':''}" onclick="showObstCommentsFn('${btnId}','${displayId}',${i})">${d.cat.split('/')[0].trim()}</button>`
+  ).join('');
+  showObstCommentsFn(btnId,displayId,0);
+}
+
+window.showObstCommentsFn=function(btnId,displayId,idx){
+  const data=window['_obstData_'+btnId];
+  if(!data) return;
+  document.querySelectorAll('#'+btnId+' .filter-btn').forEach((b,i)=>b.classList.toggle('active-f',i===idx));
+  const d=data[idx];
+  document.getElementById(displayId).innerHTML=
+    `<div style="font-size:10px;color:var(--muted);margin-bottom:8px"><strong>${d.n} respuestas</strong> — "${d.cat}"</div>`+
+    (d.comments||[]).map(c=>`<div class="cpill">${c}</div>`).join('');
+};
+
+
 function showPage(name,el){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
@@ -859,5 +1194,6 @@ function showPage(name,el){
 
 renderAll();
 </script>
+
 </body>
 </html>
