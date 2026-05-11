@@ -77,7 +77,7 @@ body{font-family:'Montserrat',sans-serif;background:#f0f4f8;background:#f0f4f8;c
 
 .nav{background:#002D72;background:#002D72;border-top:1px solid rgba(255,255,255,.08);padding:0 28px;display:flex;overflow-x:auto}
 .nav::-webkit-scrollbar{height:0}
-.nav-tab{padding:12px 16px;font-size:10px;font-weight:700;color:rgba(255,255,255,.45);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;letter-spacing:.07em;transition:all .15s;text-transform:uppercase}
+.nav-tab{padding:11px 11px;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.45);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;letter-spacing:.05em;transition:all .15s;text-transform:uppercase;flex-shrink:0}
 .nav-tab:hover{color:rgba(255,255,255,.85)}.nav-tab.active{color:#fff;border-bottom-color:#0097D8}
 
 .page{display:none;padding:24px 28px 80px;max-width:1380px;margin:0 auto}.page.active{display:block}
@@ -229,11 +229,12 @@ body{font-family:'Montserrat',sans-serif;background:#f0f4f8;background:#f0f4f8;c
 <div class="nav">
   <div class="nav-tab active" onclick="showPage('resumen',this)">Resumen</div>
   <div class="nav-tab" onclick="showPage('uso',this)">Uso &amp; Acceso</div>
-  <div class="nav-tab" onclick="showPage('espacio',this)">Espacio de Formación</div>
-  <div class="nav-tab" onclick="showPage('cultura',this)">Cultura &amp; Liderazgo</div>
-  <div class="nav-tab" onclick="showPage('motivacion',this)">Motivadores &amp; Obstáculos</div>
-  <div class="nav-tab" onclick="showPage('comparativo',this)">RR.HH. Operaciones</div>
-  <div class="nav-tab" onclick="showPage('analisis',this)">Análisis &amp; Hallazgos</div>
+  <div class="nav-tab" onclick="showPage('espacio',this)">Espacio</div>
+  <div class="nav-tab" onclick="showPage('cultura',this)">Cultura</div>
+  <div class="nav-tab" onclick="showPage('motivacion',this)">Motivadores</div>
+  <div class="nav-tab" onclick="showPage('comparativo',this)">RR.HH. Ops.</div>
+  <div class="nav-tab" onclick="showPage('analisis',this)">Hallazgos</div>
+  <div class="nav-tab" onclick="showPage('indicador',this)">Indicador</div>
 </div>
 
 <!-- ══ RESUMEN ══ -->
@@ -1237,15 +1238,414 @@ window.showObstCommentsFn=function(btnId,displayId,idx){
 };
 
 
+// ── INDICADOR DE CAPACITACIÓN ──
+const IND_DATA = {
+  meses: ['agosto','octubre','diciembre','enero','febrero','marzo','abril'],
+  meses_labels: ['Ago','Oct','Dic','Ene','Feb','Mar','Abr'],
+  trim_idx: [1,3,6], // indices of trimestral months
+  group_avgs: {
+    top:    {agosto:82.5,octubre:93.3,diciembre:88.7,enero:97.1,febrero:86.7,marzo:94.9,abril:96.8,promedio:91.4},
+    bottom: {agosto:56.4,octubre:72.2,diciembre:56.6,enero:70.6,febrero:49.9,marzo:55.9,abril:75.6,promedio:62.5},
+    mueble: {agosto:51.8,octubre:67.8,diciembre:54.8,enero:72.7,febrero:52.6,marzo:66.9,abril:79.0,promedio:63.7}
+  },
+  tiendas: [
+    {tienda:"Serranía",area:"Á12",grupo:"top",agosto:84.5,octubre:95.5,diciembre:95.1,enero:98.6,febrero:90.9,marzo:96.8,abril:98.5,promedio:94.3},
+    {tienda:"Liliana",area:"Á12",grupo:"top",agosto:89.3,octubre:96.8,diciembre:92.6,enero:96.7,febrero:84.6,marzo:97.2,abril:99.1,promedio:93.8},
+    {tienda:"Aguamarina",area:"Á14",grupo:"top",agosto:83.1,octubre:96.0,diciembre:98.8,enero:96.8,febrero:86.3,marzo:96.0,abril:94.5,promedio:93.1},
+    {tienda:"El Bosque",area:"Á9",grupo:"top",agosto:87.4,octubre:98.1,diciembre:93.4,enero:100.0,febrero:83.4,marzo:93.0,abril:98.1,promedio:93.3},
+    {tienda:"Elizabeth",area:"Á14",grupo:"top",agosto:83.5,octubre:88.1,diciembre:96.9,enero:99.1,febrero:92.5,marzo:94.4,abril:86.6,promedio:91.6},
+    {tienda:"Ocumito",area:"Á5",grupo:"top",agosto:81.0,octubre:88.5,diciembre:92.6,enero:98.3,febrero:90.8,marzo:99.7,abril:99.0,promedio:92.8},
+    {tienda:"Madre Cabrini",area:"Á3",grupo:"top",agosto:81.6,octubre:97.3,diciembre:83.5,enero:96.7,febrero:78.0,marzo:82.5,abril:100.0,promedio:88.5},
+    {tienda:"Scarlet",area:"Á15",grupo:"top",agosto:81.4,octubre:90.9,diciembre:79.5,enero:95.7,febrero:87.8,marzo:95.7,abril:96.7,promedio:89.7},
+    {tienda:"Cuartel Baralt",area:"Á2",grupo:"top",agosto:69.6,octubre:91.7,diciembre:84.4,enero:93.0,febrero:90.7,marzo:95.8,abril:97.9,promedio:89.0},
+    {tienda:"Índigo",area:"Á1",grupo:"top",agosto:83.7,octubre:90.1,diciembre:70.3,enero:96.0,febrero:81.8,marzo:97.7,abril:98.1,promedio:88.3},
+    {tienda:"Pirineos",area:"Á2",grupo:"bottom",agosto:49.4,octubre:74.4,diciembre:47.0,enero:54.8,febrero:39.7,marzo:37.2,abril:61.4,promedio:52.0},
+    {tienda:"Boulevart de Catia",area:"Á3",grupo:"bottom",agosto:58.9,octubre:65.2,diciembre:53.4,enero:57.7,febrero:37.5,marzo:46.1,abril:59.3,promedio:54.0},
+    {tienda:"Irene",area:"Á4",grupo:"bottom",agosto:45.3,octubre:69.4,diciembre:55.0,enero:68.1,febrero:33.7,marzo:52.4,abril:72.7,promedio:56.7},
+    {tienda:"Albita",area:"Á1",grupo:"bottom",agosto:54.4,octubre:64.4,diciembre:57.9,enero:75.1,febrero:53.2,marzo:54.6,abril:80.2,promedio:62.8},
+    {tienda:"Susana",area:"Á15",grupo:"bottom",agosto:70.4,octubre:64.1,diciembre:56.8,enero:71.6,febrero:65.2,marzo:66.3,abril:86.7,promedio:68.7},
+    {tienda:"Tunantal",area:"Á12",grupo:"bottom",agosto:50.7,octubre:71.6,diciembre:56.1,enero:69.6,febrero:48.8,marzo:64.9,abril:76.1,promedio:62.5},
+    {tienda:"Marta",area:"Á11",grupo:"bottom",agosto:57.7,octubre:77.6,diciembre:52.8,enero:84.3,febrero:54.1,marzo:50.5,abril:94.1,promedio:67.3},
+    {tienda:"Cielo",area:"Á7",grupo:"bottom",agosto:60.8,octubre:79.4,diciembre:62.0,enero:73.5,febrero:53.9,marzo:57.2,abril:73.8,promedio:65.8},
+    {tienda:"Oro Negro",area:"Á10",grupo:"bottom",agosto:62.7,octubre:80.0,diciembre:61.4,enero:75.9,febrero:56.5,marzo:58.4,abril:79.5,promedio:67.8},
+    {tienda:"David",area:"Á12",grupo:"bottom",agosto:53.9,octubre:75.8,diciembre:64.1,enero:75.8,febrero:55.9,marzo:71.8,abril:72.0,promedio:67.1},
+    {tienda:"Perla",area:"Á7",grupo:"mueble",agosto:54.2,octubre:76.3,diciembre:64.6,enero:74.3,febrero:56.3,marzo:67.1,abril:76.6,promedio:67.0},
+    {tienda:"José Miguel",area:"Á4",grupo:"mueble",agosto:54.4,octubre:69.6,diciembre:50.1,enero:76.3,febrero:56.2,marzo:63.7,abril:86.3,promedio:65.2},
+    {tienda:"Chuao",area:"Á4",grupo:"mueble",agosto:46.8,octubre:57.5,diciembre:49.6,enero:67.5,febrero:45.4,marzo:69.8,abril:74.0,promedio:58.7}
+  ]
+};
+
+let indSortCol='promedio', indSortDir=-1;
+
+let indTableExpanded = false;
+
+function toggleIndTable(btn){
+  const wrap = document.getElementById('ind-table-wrap');
+  if(!wrap) return;
+  indTableExpanded = !indTableExpanded;
+  wrap.style.maxHeight = indTableExpanded ? '600px' : '44px';
+  wrap.style.overflowY = indTableExpanded ? 'auto' : 'hidden';
+  btn.textContent = indTableExpanded ? '▾ Compactar' : '▸ Expandir';
+  btn.style.background = indTableExpanded ? '#6b7e93' : '#002D72';
+}
+
+function renderIndicador(){
+  renderIndTrend();
+  renderIndTable();
+  renderIndBrecha();
+}
+
+function renderIndBrecha(){
+  const el=document.getElementById('ind-brecha-chart');
+  if(!el) return;
+  
+  // Brecha data: trimestral avg - libre avg per school per group
+  const data = [
+    {escuela:'ES', top:0.1,  bottom:2.3,  mueble:1.5,  label:'Escuela de Servicio'},
+    {escuela:'EC', top:26.8, bottom:60.6, mueble:53.9, label:'Escuela Comercial ⚡'},
+    {escuela:'EE', top:1.2,  bottom:4.6,  mueble:5.4,  label:'Escuela de Excelencia'},
+    {escuela:'FA', top:2.1,  bottom:4.9,  mueble:5.8,  label:'Formaciones Asíncronas'},
+  ];
+  
+  const W=560, H=200, PAD={t:16,r:20,b:36,l:180};
+  const cw=W-PAD.l-PAD.r, ch=H-PAD.t-PAD.b;
+  const maxVal=65;
+  const rowH=ch/data.length;
+  const barH=rowH*0.22;
+  const gap=rowH*0.08;
+  const groups=[
+    {key:'top',   color:'#0097D8', label:'Top'},
+    {key:'bottom',color:'#f57c00', label:'Bottom'},
+    {key:'mueble',color:'#2e7d32', label:'Mueble'},
+  ];
+  
+  let svg=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;display:block;overflow:visible">`;
+  
+  // EC shading
+  const ecIdx=1;
+  const ecY=PAD.t+ecIdx*rowH;
+  svg+=`<rect x="${PAD.l}" y="${ecY}" width="${cw}" height="${rowH}" fill="#fff3e0" rx="4"/>`;
+  
+  // Grid lines
+  [25,50].forEach(v=>{
+    const x=PAD.l+(v/maxVal)*cw;
+    svg+=`<line x1="${x}" y1="${PAD.t}" x2="${x}" y2="${PAD.t+ch}" stroke="#d6e3ef" stroke-width="1" stroke-dasharray="3,3"/>`;
+    svg+=`<text x="${x}" y="${PAD.t+ch+14}" text-anchor="middle" font-size="9" fill="#6b7e93" font-family="Montserrat,sans-serif">+${v}pp</text>`;
+  });
+  svg+=`<text x="${PAD.l}" y="${PAD.t+ch+14}" text-anchor="middle" font-size="9" fill="#6b7e93" font-family="Montserrat,sans-serif">0</text>`;
+  
+  data.forEach((d,ri)=>{
+    const rowY=PAD.t+ri*rowH;
+    const isEC=d.escuela==='EC';
+    
+    // Row label
+    svg+=`<text x="${PAD.l-8}" y="${rowY+rowH/2+4}" text-anchor="end" font-size="${isEC?10.5:9.5}" font-weight="${isEC?700:500}" fill="${isEC?'#002D72':'#0d1f35'}" font-family="Montserrat,sans-serif">${d.label}</text>`;
+    
+    groups.forEach(({key,color},gi)=>{
+      const val=d[key];
+      const bw=(val/maxVal)*cw;
+      const by=rowY+rowH*0.15+gi*(barH+gap);
+      svg+=`<rect x="${PAD.l}" y="${by}" width="${Math.max(bw,2)}" height="${barH}" rx="2" fill="${color}" opacity="${isEC?1:0.7}"/>`;
+      if(val>2) svg+=`<text x="${PAD.l+bw+4}" y="${by+barH-1}" font-size="${isEC?9:8.5}" font-weight="${isEC?700:500}" fill="${color}" font-family="Montserrat,sans-serif">+${val}pp</text>`;
+    });
+  });
+  
+  // Legend
+  groups.forEach(({color,label},i)=>{
+    svg+=`<rect x="${PAD.l+i*80}" y="${H-14}" width="10" height="10" rx="2" fill="${color}"/>`;
+    svg+=`<text x="${PAD.l+i*80+14}" y="${H-5}" font-size="9" fill="#0d1f35" font-family="Montserrat,sans-serif" font-weight="600">${label}</text>`;
+  });
+  
+  svg+='</svg>';
+  el.innerHTML=svg;
+}
+
+function renderIndTrend(){
+  const el=document.getElementById('ind-trend-chart');
+  if(!el) return;
+  const meses=IND_DATA.meses_labels;
+  const trimIdx=IND_DATA.trim_idx;
+  const ga=IND_DATA.group_avgs;
+  const W=640,H=260,PAD={t:20,r:20,b:40,l:44};
+  const cw=W-PAD.l-PAD.r, ch=H-PAD.t-PAD.b;
+  const xStep=cw/(meses.length-1);
+  const yScale=(v)=>PAD.t+ch-(v/100)*ch;
+  
+  // Shading for trimestral months
+  let shading='';
+  trimIdx.forEach(i=>{
+    const x=PAD.l+i*xStep-xStep*0.35;
+    shading+=`<rect x="${x}" y="${PAD.t}" width="${xStep*0.7}" height="${ch}" fill="#e6f5fd" opacity="0.7"/>`;
+  });
+  
+  // Grid lines
+  let grid='';
+  [25,50,75,100].forEach(v=>{
+    const y=yScale(v);
+    grid+=`<line x1="${PAD.l}" y1="${y}" x2="${PAD.l+cw}" y2="${y}" stroke="#d6e3ef" stroke-width="1"/>`;
+    grid+=`<text x="${PAD.l-6}" y="${y+4}" text-anchor="end" font-size="9" fill="#6b7e93" font-family="Montserrat,sans-serif">${v}%</text>`;
+  });
+  
+  // Lines
+  const groups=[
+    {g:'top',color:'#0097D8',label:'Grupo Top'},
+    {g:'bottom',color:'#f57c00',label:'Grupo Bottom'},
+    {g:'mueble',color:'#2e7d32',label:'Grupo Mueble'}
+  ];
+  let lines='',dots='';
+  groups.forEach(({g,color,label})=>{
+    const vals=IND_DATA.meses.map(m=>IND_DATA.group_avgs[g][m]);
+    const pts=vals.map((v,i)=>`${PAD.l+i*xStep},${yScale(v)}`).join(' ');
+    lines+=`<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+    vals.forEach((v,i)=>{
+      const isTrim=trimIdx.includes(i);
+      dots+=`<circle cx="${PAD.l+i*xStep}" cy="${yScale(v)}" r="${isTrim?5:3.5}" fill="${color}" stroke="#fff" stroke-width="${isTrim?2:1.5}"/>`;
+      if(isTrim) dots+=`<text x="${PAD.l+i*xStep}" y="${yScale(v)-(g==='top'?10:g==='mueble'?22:36)}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${color}" font-family="Montserrat,sans-serif">${v}%</text>`;
+    });
+  });
+  
+  // X axis labels
+  let xlabels='';
+  meses.forEach((m,i)=>{
+    const isTrim=trimIdx.includes(i);
+    xlabels+=`<text x="${PAD.l+i*xStep}" y="${H-8}" text-anchor="middle" font-size="${isTrim?9.5:9}" font-weight="${isTrim?700:400}" fill="${isTrim?'#0097D8':'#6b7e93'}" font-family="Montserrat,sans-serif">${isTrim?m+' ⚡':m}</text>`;
+  });
+  
+  // Legend
+  const legendY=PAD.t;
+  let legend='';
+  groups.forEach(({color,label},i)=>{
+    legend+=`<rect x="${PAD.l+cw-170+i*58}" y="${legendY}" width="10" height="10" rx="2" fill="${color}"/>`;
+    legend+=`<text x="${PAD.l+cw-156+i*58}" y="${legendY+9}" font-size="8.5" fill="#0d1f35" font-family="Montserrat,sans-serif" font-weight="600">${label}</text>`;
+  });
+  
+  // Trim label
+  let trimLabel=`<text x="${PAD.l+cw/2}" y="${H-25}" text-anchor="middle" font-size="8" fill="#0097D8" font-family="Montserrat,sans-serif" font-weight="700" opacity="0.7">⚡ = Cierre trimestral · impacta remuneración variable</text>`;
+  
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;display:block;overflow:visible">
+    ${shading}${grid}${lines}${dots}${xlabels}
+    <line x1="${PAD.l}" y1="${PAD.t}" x2="${PAD.l}" y2="${PAD.t+ch}" stroke="#d6e3ef" stroke-width="1"/>
+  </svg>`;
+}
+
+function cellColor(val){
+  if(val===null||val===undefined) return '#f0f4f8';
+  if(val>=90) return '#c8f0d4';
+  if(val>=75) return '#e8f5e9';
+  if(val>=60) return '#fff9e6';
+  if(val>=50) return '#fff3e0';
+  return '#ffebee';
+}
+
+function cellTextColor(val){
+  if(val===null||val===undefined) return '#6b7e93';
+  if(val>=90) return '#1b5e20';
+  if(val>=75) return '#2e7d32';
+  if(val>=60) return '#e65100';
+  if(val>=50) return '#bf360c';
+  return '#c62828';
+}
+
+function sortIndTable(col,btn){
+  if(indSortCol===col) indSortDir*=-1; else{indSortCol=col;indSortDir=-1;}
+  document.querySelectorAll('#page-indicador .filter-btn').forEach(b=>b.classList.remove('active-f'));
+  if(btn) btn.classList.add('active-f');
+  renderIndTable();
+}
+
+function renderIndTable(){
+  const tbody=document.getElementById('ind-tbody');
+  if(!tbody) return;
+  const bc={top:'btop',bottom:'bbot',mueble:'bmueble'};
+  const bl={top:'Top',bottom:'Bottom',mueble:'Mueble'};
+  const meses=IND_DATA.meses;
+  const trimIdx=IND_DATA.trim_idx;
+  
+  let rows=[...IND_DATA.tiendas];
+  rows.sort((a,b)=>{
+    const av=a[indSortCol]||0, bv=b[indSortCol]||0;
+    if(typeof av==='string') return indSortDir*av.localeCompare(bv);
+    return indSortDir*(av-bv);
+  });
+  
+  // Add group averages as summary rows
+  const summaryRows=[
+    {tienda:'Promedio Grupo Top',area:'—',grupo:'top',
+     agosto:82.5,octubre:93.3,diciembre:88.7,enero:97.1,febrero:86.7,marzo:94.9,abril:96.8,promedio:91.4,isSummary:true},
+    {tienda:'Promedio Grupo Bottom',area:'—',grupo:'bottom',
+     agosto:56.4,octubre:72.2,diciembre:56.6,enero:70.6,febrero:49.9,marzo:55.9,abril:75.6,promedio:62.5,isSummary:true},
+    {tienda:'Promedio Grupo Mueble',area:'—',grupo:'mueble',
+     agosto:51.8,octubre:67.8,diciembre:54.8,enero:72.7,febrero:52.6,marzo:66.9,abril:79.0,promedio:63.7,isSummary:true},
+  ];
+  
+  const allRows=[...rows,...summaryRows];
+  
+  tbody.innerHTML=allRows.map(r=>{
+    const gc={top:'#0097D8',bottom:'#f57c00',mueble:'#2e7d32'}[r.grupo];
+    const isSumm=r.isSummary;
+    const rowBg=isSumm?`background:${gc}15;`:
+      (r.grupo==='top'?'':'');
+    return `<tr style="${rowBg}${isSumm?'border-top:2px solid '+gc:''};border-bottom:1px solid #d6e3ef">
+      <td style="padding:8px 10px;font-weight:${isSumm?800:600};color:${isSumm?gc:'#0d1f35'};font-size:${isSumm?10.5:11}px;white-space:nowrap">${r.tienda}</td>
+      <td style="padding:8px 8px;text-align:center;color:#6b7e93;font-size:10px">${r.area}</td>
+      <td style="padding:8px 8px;text-align:center">${isSumm?'':('<span class="badge '+bc[r.grupo]+'" style="font-size:8px">'+bl[r.grupo]+'</span>')}</td>
+      ${meses.map((m,i)=>{
+        const v=r[m];
+        const isTrim=trimIdx.includes(i);
+        const bg=v!=null?cellColor(v):(isTrim?'#e6f5fd':'#f0f4f8');
+        const tc=v!=null?cellTextColor(v):'#6b7e93';
+        return `<td style="padding:8px 8px;text-align:center;background:${bg};font-weight:${isTrim?700:500};color:${tc};font-size:11px;border-left:${isTrim?'2px solid #0097D850':'none'}">${v!=null?v+'%':'—'}</td>`;
+      }).join('')}
+      <td style="padding:8px 8px;text-align:center;background:${r.promedio?cellColor(r.promedio):'#f0f4f8'};font-weight:800;color:${r.promedio?cellTextColor(r.promedio):'#6b7e93'};font-size:11px">${r.promedio!=null?r.promedio+'%':'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
 function showPage(name,el){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('page-'+name).classList.add('active');
   if(el) el.classList.add('active');
   if(name==='comparativo'){ buildAreaBtns(); renderRRHH(); }
+  if(name==='indicador'){ renderIndicador(); }
 }
 
 renderAll();
 </script>
+
+<!-- ══ INDICADOR DE CAPACITACIÓN ══ -->
+<div class="page" id="page-indicador">
+  <div style="margin-top:20px">
+
+    <!-- KPIs -->
+    <div class="kpi-row" style="margin-bottom:20px">
+      <div class="kpi" style="border-top-color:#0097D8">
+        <div class="kpi-lbl">Promedio Anual<br>de Participación</div>
+        <div class="kpi-val" style="color:#0097D8">72.9%</div>
+        <div class="kpi-sub">23 tiendas · todos los meses</div>
+      </div>
+      <div class="kpi" style="border-top-color:#0097D8">
+        <div class="kpi-lbl">Meses de Cierre<br>Oct · Ene · Abr</div>
+        <div class="kpi-val" style="color:#0097D8">82.8%</div>
+        <div class="kpi-sub">Trimestres con rem. variable</div>
+      </div>
+      <div class="kpi" style="border-top-color:#9e9e9e">
+        <div class="kpi-lbl">Meses Libres<br>Ago · Dic · Feb · Mar</div>
+        <div class="kpi-val" style="color:#6b7e93">69.5%</div>
+        <div class="kpi-sub">Sin presión de pago</div>
+      </div>
+      <div class="kpi k-green">
+        <div class="kpi-lbl">Brecha<br>Trimestral vs Libre</div>
+        <div class="kpi-val" style="color:#2e7d32">+13.3pp</div>
+        <div class="kpi-sub">Efecto rem. variable confirmado</div>
+      </div>
+      <div class="kpi k-navy">
+        <div class="kpi-lbl">Promedio<br>Grupo Top</div>
+        <div class="kpi-val">91.4%</div>
+        <div class="kpi-sub">Consistente todo el año</div>
+      </div>
+      <div class="kpi k-orange">
+        <div class="kpi-lbl">Promedio<br>Bottom &amp; Mueble</div>
+        <div class="kpi-val">63%</div>
+        <div class="kpi-sub">Reactivo al trimestre</div>
+      </div>
+    </div>
+
+    <!-- GRÁFICO DE TENDENCIA -->
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-hdr">
+        <div><div class="card-title">Evolución Mensual del Indicador por Grupo</div>
+        <div class="card-sub">% cumplimiento promedio &middot; columnas azules = meses de cierre trimestral ⚡</div></div>
+      </div>
+      <div id="ind-trend-chart"></div>
+    </div>
+
+    <!-- TABLA DETALLE EXPANDIBLE -->
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-hdr">
+        <div><div class="card-title">Detalle por Tienda</div>
+        <div class="card-sub">Oct · Ene · Abr = cierres trimestrales &middot; color = nivel de cumplimiento</div></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button onclick="sortIndTable('tienda',this)" class="filter-btn" id="isort-tienda">Tienda ↕</button>
+          <button onclick="sortIndTable('promedio',this)" class="filter-btn active-f" id="isort-promedio">Promedio ↕</button>
+          <button onclick="toggleIndTable(this)" class="filter-btn" id="ind-expand-btn" style="background:#002D72;color:#fff;border-color:#002D72">▸ Expandir</button>
+        </div>
+      </div>
+      <div id="ind-table-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;max-height:44px;overflow:hidden;transition:max-height .4s ease">
+        <table style="width:100%;border-collapse:collapse;min-width:700px;font-size:11px" id="ind-table">
+          <thead>
+            <tr style="background:#002D72;color:#fff;position:sticky;top:0;z-index:2">
+              <th style="padding:9px 10px;text-align:left;font-size:9.5px;font-weight:700;letter-spacing:.06em;white-space:nowrap">Tienda</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700">Área</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700">Grupo</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#1a4a9e">Ago</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#0097D8">OCT ⚡</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#1a4a9e">Dic</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#0097D8">ENE ⚡</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#1a4a9e">Feb</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#1a4a9e">Mar</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#0097D8">ABR ⚡</th>
+              <th style="padding:9px 8px;text-align:center;font-size:9.5px;font-weight:700;background:#2e7d32">PROM.</th>
+            </tr>
+          </thead>
+          <tbody id="ind-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- HALLAZGOS -->
+    <div class="sec-lbl">🔍 Correlación: Indicador &amp; Encuesta</div>
+
+    <!-- Mini gráfico EC vs resto -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-hdr">
+        <div><div class="card-title">El efecto trimestral NO es igual en todas las Escuelas</div>
+        <div class="card-sub">Brecha promedio entre meses de cierre (Oct·Ene·Abr) y meses libres (Ago·Dic·Feb·Mar) por escuela y grupo</div></div>
+        <div class="ibtn">i<div class="tt">ES=Escuela de Servicio · EC=Escuela Comercial · EE=Escuela de Excelencia · FA=Formaciones Asíncronas. La Escuela Comercial (EC) es la que impacta directamente en la remuneración variable trimestral.</div></div>
+      </div>
+      <div id="ind-brecha-chart"></div>
+    </div>
+
+    <div class="g2" style="margin-bottom:16px">
+      <div class="finding positive">
+        <div class="ftitle">📈 La rem. variable mueve a todos — y el Top se mantiene
+          <span class="ftag ft-ok" style="margin-left:6px">Clave</span>
+        </div>
+        <div class="fbody">
+          En meses de cierre el indicador sube en los <strong>3 grupos</strong>: Top +3pp, Bottom +18pp, Mueble +16pp. En los meses libres, el Top <strong>se mantiene</strong> en 90.2% mientras Bottom y Mueble caen a <strong>50–55%</strong>. La rem. variable es un motor universal — pero la cultura del Top sostiene el nivel entre trimestres.
+        </div>
+      </div>
+      <div class="finding alert">
+        <div class="ftitle">🎯 Los datos de encuesta explican la brecha del indicador
+          <span class="ftag ft-a" style="margin-left:6px">Correlación</span>
+        </div>
+        <div class="fbody">
+          Los colaboradores de Bottom y Mueble —quienes presentan la mayor caída entre trimestres— son los que más resaltan <strong>"Remuneración variable" (33–34%)</strong> y <strong>"Obligatoriedad" (18–21%)</strong> como sus principales motivadores. Esto determina que su perspectiva ante la formación es <strong>extrínseca</strong>: hacen los cursos cuando hay consecuencia directa, no por interés propio. En contraste, el Top lidera en <strong>"Crecimiento personal" (84%)</strong> y su indicador lo confirma: forma independientemente del ciclo de pago.
+        </div>
+      </div>
+    </div>
+
+    <div class="finding positive" style="margin-bottom:16px">
+      <div class="ftitle">🏆 El Top completa ES, EE y FA en más de 95% todo el año — sin necesidad de incentivo
+        <span class="ftag ft-ok" style="margin-left:6px">Motivación intrínseca</span>
+      </div>
+      <div class="fbody">
+        El grupo Top mantiene ES en <strong>97%</strong>, FA en <strong>96%</strong> y EE en <strong>92%</strong> de forma constante con brechas trimestrales de apenas 0–2pp. Solo la EC sube en cierre (+27pp), igual que los demás grupos — pero esa es su única reacción al pago. Confirma que la formación en el Top es cultura real, no respuesta a un incentivo.
+      </div>
+    </div>
+
+    <!-- CONCLUSIÓN -->
+    <div style="background:#e6f5fd;border-left:3px solid #0097D8;border-radius:10px;padding:14px 18px;font-size:11px;line-height:1.8;margin-bottom:10px">
+      <strong style="color:#002D72">Conclusión — 3 perfiles motivacionales:</strong><br>
+      <strong>① Motivación intrínseca (Top):</strong> alta y consistente todo el año en todas las escuelas. La formación es cultura — el indicador lo confirma con o sin cierre trimestral.<br>
+      <strong>② Motivación extrínseca (Bottom &amp; Mueble):</strong> reactiva al pago. La EC colapsa a 23–25% en meses libres y se recupera a 87–98% en cierres. Las demás escuelas son más estables pero con niveles bajos.<br>
+      <strong>③ El mueble no cambia el perfil motivacional:</strong> el Grupo Mueble replica el patrón extrínseco del Bottom a pesar de tener la infraestructura. Sin gestión del tiempo y acompañamiento, la herramienta no es suficiente.<br>
+      <span style="color:#0097D8;font-weight:700">La EC revela quién forma por pago. Las demás escuelas revelan quién forma por cultura.</span>
+    </div>
+
+  </div>
+</div>
+
+
 </body>
 </html>
